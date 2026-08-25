@@ -24,7 +24,7 @@ export const CodeurWidget: React.FC<CodeurWidgetProps> = ({ lang }) => {
       {/* Widget Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-slate-100">
         <div className="flex items-center gap-3.5">
-          <div className="w-11 h-11 rounded-xl bg-blue-50 border border-blue-100 flex items-center justify-center text-blue-700 shadow-sm shrink-0">
+          <div className="w-11 h-11 rounded-xl bg-emerald-50 border border-emerald-200 flex items-center justify-center text-emerald-800 shadow-sm shrink-0">
             <Award className="w-6 h-6" />
           </div>
           <div>
@@ -33,8 +33,8 @@ export const CodeurWidget: React.FC<CodeurWidgetProps> = ({ lang }) => {
             </div>
             <h4 className="text-base sm:text-lg font-bold text-slate-900 flex items-center gap-2">
               <span>Codeur.com</span>
-              <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-mono font-bold bg-emerald-50 text-emerald-700 border border-emerald-200">
-                <CheckCircle className="w-3.5 h-3.5" />
+              <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-mono font-bold bg-emerald-50 text-emerald-800 border border-emerald-200">
+                <CheckCircle className="w-3.5 h-3.5 text-emerald-600" />
                 <span>Profil Vérifié</span>
               </span>
             </h4>
@@ -46,7 +46,7 @@ export const CodeurWidget: React.FC<CodeurWidgetProps> = ({ lang }) => {
             href="https://www.codeur.com"
             target="_blank"
             rel="noreferrer"
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs sm:text-sm font-mono font-bold text-blue-700 hover:text-white bg-blue-50 hover:bg-blue-600 border border-blue-200 transition-all shadow-sm"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs sm:text-sm font-mono font-bold text-emerald-800 hover:text-white bg-emerald-50 hover:bg-emerald-800 border border-emerald-300 transition-all shadow-sm"
           >
             <span>{lang === 'fr' ? 'Consulter le profil Codeur.com' : 'View on Codeur.com'}</span>
             <ExternalLink className="w-4 h-4" />
@@ -66,7 +66,7 @@ export const CodeurWidget: React.FC<CodeurWidgetProps> = ({ lang }) => {
             <div className="space-y-1.5 text-center md:text-left">
               <div className="font-bold text-slate-900 text-base sm:text-lg flex items-center justify-center md:justify-start gap-2">
                 <span>AKOTSE Kokou Patrice Edem</span>
-                <span className="text-xs font-mono text-blue-700 bg-blue-50 px-2.5 py-0.5 rounded-md border border-blue-200">
+                <span className="text-xs font-mono text-emerald-800 bg-emerald-50 px-2.5 py-0.5 rounded-md border border-emerald-200 font-bold">
                   Développeur Full-Stack Web & Mobile
                 </span>
               </div>
@@ -76,9 +76,9 @@ export const CodeurWidget: React.FC<CodeurWidgetProps> = ({ lang }) => {
             </div>
 
             <div className="flex items-center gap-3 shrink-0">
-              <div className="flex items-center gap-1.5 bg-white px-4 py-2 rounded-xl border border-slate-200 text-amber-600 font-mono font-bold text-xs sm:text-sm shadow-sm">
-                <Star className="w-4 h-4 fill-amber-400 text-amber-400" />
-                <span className="text-slate-800">Prestataire Recommandé</span>
+              <div className="flex items-center gap-1.5 bg-white px-4 py-2 rounded-xl border border-amber-200 text-amber-800 font-mono font-bold text-xs sm:text-sm shadow-sm">
+                <Star className="w-4 h-4 fill-amber-400 text-amber-500" />
+                <span className="text-slate-900">Prestataire Recommandé</span>
               </div>
             </div>
           </div>

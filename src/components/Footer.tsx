@@ -19,24 +19,27 @@ export const Footer: React.FC<FooterProps> = ({ lang }) => {
           {/* Brand Col */}
           <div className="md:col-span-2 space-y-3.5">
             <div className="flex items-center gap-3">
-              <div className="w-9 h-9 rounded-lg bg-blue-600 border border-blue-500 flex items-center justify-center font-bold text-white text-sm font-mono">
+              <div className="w-9 h-9 rounded-lg bg-emerald-700 border border-amber-400/40 flex items-center justify-center font-bold text-white text-sm font-mono shadow-sm">
                 PA
               </div>
-              <span className="font-serif font-bold text-white text-lg tracking-tight">
-                {PERSONAL_INFO.fullName}
-              </span>
+              <div className="flex items-center gap-2">
+                <span className="font-serif font-bold text-white text-lg tracking-tight">
+                  {PERSONAL_INFO.fullName}
+                </span>
+                <span className="text-sm">🇹🇬</span>
+              </div>
             </div>
             <p className="text-slate-300 text-sm sm:text-base max-w-sm leading-relaxed font-normal">
               {lang === 'fr'
-                ? 'Développeur Full-Stack Web & Mobile spécialisé dans les architectures pérennes (Laravel, React, Next.js, Python, Flutter) et les passerelles de paiement FinTech.'
-                : 'Full-Stack Web & Mobile engineer specialized in resilient architectures (Laravel, React, Next.js, Python, Flutter) and FinTech payment integrations.'}
+                ? 'Développeur Full-Stack Web & Mobile basé à Lomé (Togo), spécialisé dans les architectures pérennes (Laravel, React, Next.js, Python, Flutter) et les passerelles de paiement FinTech.'
+                : 'Full-Stack Web & Mobile engineer based in Lomé (Togo), specialized in resilient architectures (Laravel, React, Next.js, Python, Flutter) and FinTech payment integrations.'}
             </p>
-            <div className="flex items-center gap-2 pt-1">
-              <span className="inline-flex items-center gap-1 px-3 py-1 rounded-md bg-slate-900 border border-slate-800 text-xs text-blue-400 font-mono font-semibold">
+            <div className="flex items-center gap-2 pt-1 flex-wrap">
+              <span className="inline-flex items-center gap-1 px-3 py-1 rounded-md bg-slate-900 border border-slate-800 text-xs text-emerald-400 font-mono font-semibold">
                 <Code2 className="w-3.5 h-3.5" />
                 <span>@{PERSONAL_INFO.username}</span>
               </span>
-              <span className="inline-flex items-center gap-1 px-3 py-1 rounded-md bg-slate-900 border border-slate-800 text-xs text-emerald-400 font-mono font-semibold">
+              <span className="inline-flex items-center gap-1 px-3 py-1 rounded-md bg-slate-900 border border-slate-800 text-xs text-amber-300 font-mono font-semibold">
                 <Package className="w-3.5 h-3.5" />
                 <span>moneyfusion-laravel</span>
               </span>
@@ -45,22 +48,22 @@ export const Footer: React.FC<FooterProps> = ({ lang }) => {
 
           {/* Navigation Links */}
           <div className="space-y-3">
-            <h4 className="font-mono text-white text-xs uppercase tracking-[0.2em] font-bold">
+            <h4 className="font-mono text-amber-300 text-xs uppercase tracking-[0.2em] font-bold">
               Navigation
             </h4>
             <ul className="space-y-2 text-sm text-slate-300 font-medium">
-              <li><a href="#about" className="hover:text-blue-400 transition-colors">À Propos</a></li>
-              <li><a href="#skills" className="hover:text-blue-400 transition-colors">Compétences & Stack</a></li>
-              <li><a href="#projects" className="hover:text-blue-400 transition-colors">Projets & Packages</a></li>
-              <li><a href="#experience" className="hover:text-blue-400 transition-colors">Parcours & Timeline</a></li>
-              <li><a href="#estimator" className="hover:text-blue-400 transition-colors">Calculateur de Devis</a></li>
-              <li><a href="#contact" className="hover:text-blue-400 transition-colors">Me Contacter</a></li>
+              <li><a href="#about" className="hover:text-emerald-400 transition-colors">À Propos</a></li>
+              <li><a href="#skills" className="hover:text-emerald-400 transition-colors">Compétences & Stack</a></li>
+              <li><a href="#projects" className="hover:text-emerald-400 transition-colors">Projets & Packages</a></li>
+              <li><a href="#experience" className="hover:text-emerald-400 transition-colors">Parcours & Timeline</a></li>
+              <li><a href="#estimator" className="hover:text-emerald-400 transition-colors">Calculateur de Devis</a></li>
+              <li><a href="#contact" className="hover:text-emerald-400 transition-colors">Me Contacter</a></li>
             </ul>
           </div>
 
           {/* Social & Contact */}
           <div className="space-y-3">
-            <h4 className="font-mono text-white text-xs uppercase tracking-[0.2em] font-bold">
+            <h4 className="font-mono text-amber-300 text-xs uppercase tracking-[0.2em] font-bold">
               Connect
             </h4>
             <ul className="space-y-2.5 text-sm">
@@ -69,23 +72,23 @@ export const Footer: React.FC<FooterProps> = ({ lang }) => {
                   href={PERSONAL_INFO.githubUrl}
                   target="_blank"
                   rel="noreferrer"
-                  className="flex items-center gap-2 text-slate-200 hover:text-blue-400 transition-colors font-mono text-xs sm:text-sm font-semibold"
+                  className="flex items-center gap-2 text-slate-200 hover:text-emerald-400 transition-colors font-mono text-xs sm:text-sm font-semibold"
                 >
-                  <Github className="w-4 h-4" />
+                  <Github className="w-4 h-4 text-emerald-400" />
                   <span>github.com/{PERSONAL_INFO.username}</span>
                 </a>
               </li>
               <li>
                 <a
                   href={`mailto:${PERSONAL_INFO.email}`}
-                  className="flex items-center gap-2 text-slate-200 hover:text-blue-400 transition-colors font-mono text-xs sm:text-sm font-semibold"
+                  className="flex items-center gap-2 text-slate-200 hover:text-amber-300 transition-colors font-mono text-xs sm:text-sm font-semibold"
                 >
-                  <Mail className="w-4 h-4" />
+                  <Mail className="w-4 h-4 text-amber-300" />
                   <span>{PERSONAL_INFO.email}</span>
                 </a>
               </li>
               <li className="text-slate-300 pt-1 text-xs sm:text-sm font-mono font-medium">
-                📍 Lomé, Togo
+                📍 Lomé, Togo 🇹🇬
               </li>
             </ul>
           </div>
@@ -94,15 +97,15 @@ export const Footer: React.FC<FooterProps> = ({ lang }) => {
         {/* Bottom Bar */}
         <div className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-slate-400 text-xs sm:text-sm font-mono">
           <div className="flex items-center gap-1 text-center sm:text-left font-medium">
-            <span>© {new Date().getFullYear()} {PERSONAL_INFO.fullName}. Tous droits réservés.</span>
+            <span>© {new Date().getFullYear()} {PERSONAL_INFO.fullName}. Fièrement conçu avec la passion du Togo 🇹🇬.</span>
           </div>
 
           <button
             onClick={scrollToTop}
-            className="flex items-center gap-2 px-4 py-2 rounded-full bg-slate-900 hover:bg-slate-800 text-slate-200 hover:text-white border border-slate-800 transition-colors font-bold text-xs uppercase tracking-wider"
+            className="flex items-center gap-2 px-4 py-2 rounded-full bg-slate-900 hover:bg-slate-800 text-slate-200 hover:text-white border border-slate-800 hover:border-emerald-500/40 transition-colors font-bold text-xs uppercase tracking-wider"
           >
             <span>Haut de page</span>
-            <ArrowUp className="w-4 h-4 text-blue-400" />
+            <ArrowUp className="w-4 h-4 text-amber-300" />
           </button>
         </div>
       </div>

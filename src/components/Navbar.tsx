@@ -45,20 +45,23 @@ export const Navbar: React.FC<NavbarProps> = ({ lang, setLang, onOpenResume }) =
         <a
           href="#"
           id="nav-logo"
-          className="flex items-center gap-3 group focus:outline-none focus-visible:ring-1 focus-visible:ring-blue-600 rounded-lg p-1"
+          className="flex items-center gap-3 group focus:outline-none focus-visible:ring-1 focus-visible:ring-emerald-600 rounded-lg p-1"
         >
-          <div className="w-10 h-10 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center font-serif font-bold text-white shadow-sm group-hover:bg-blue-600 group-hover:border-blue-600 transition-colors duration-200">
-            <span className="text-sm tracking-wider">PA</span>
+          <div className="w-10 h-10 rounded-xl bg-emerald-950 border border-emerald-800/80 flex items-center justify-center font-serif font-bold text-amber-400 shadow-sm group-hover:bg-emerald-900 group-hover:border-amber-500/50 transition-all duration-200">
+            <span className="text-sm tracking-wider font-mono font-bold">PA</span>
           </div>
           <div>
             <div className="font-bold text-slate-900 text-sm sm:text-base tracking-tight flex items-center gap-2">
               <span>{PERSONAL_INFO.shortName}</span>
-              <span className="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-mono bg-slate-100 text-slate-700 border border-slate-200">
-                @{PERSONAL_INFO.username}
+              <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-mono bg-emerald-50 text-emerald-800 border border-emerald-200/80 font-bold">
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-600"></span>
+                <span>@{PERSONAL_INFO.username}</span>
               </span>
             </div>
-            <p className="text-[10px] uppercase tracking-[0.2em] text-slate-500 font-mono hidden sm:block">
-              Full-Stack & Mobile
+            <p className="text-[10px] uppercase tracking-[0.2em] text-slate-500 font-mono hidden sm:flex items-center gap-1.5">
+              <span>Full-Stack & Mobile</span>
+              <span className="text-slate-300">•</span>
+              <span className="text-emerald-700 font-bold">🇹🇬 Togo</span>
             </p>
           </div>
         </a>
@@ -69,7 +72,7 @@ export const Navbar: React.FC<NavbarProps> = ({ lang, setLang, onOpenResume }) =
             <a
               key={item.href}
               href={item.href}
-              className="px-4 py-1.5 text-xs sm:text-sm uppercase tracking-wider font-semibold text-slate-700 hover:text-slate-950 hover:bg-white rounded-full transition-all duration-150 shadow-none hover:shadow-sm"
+              className="px-4 py-1.5 text-xs sm:text-sm uppercase tracking-wider font-semibold text-slate-700 hover:text-emerald-900 hover:bg-white rounded-full transition-all duration-150 shadow-none hover:shadow-sm"
             >
               {item.label}
             </a>
@@ -82,10 +85,10 @@ export const Navbar: React.FC<NavbarProps> = ({ lang, setLang, onOpenResume }) =
           <button
             id="lang-toggle-btn"
             onClick={() => setLang(lang === 'fr' ? 'en' : 'fr')}
-            className="flex items-center gap-1.5 px-3.5 py-2 rounded-full text-xs sm:text-sm font-bold text-slate-800 hover:text-slate-950 bg-slate-100 hover:bg-slate-200/80 border border-slate-200 transition-colors"
+            className="flex items-center gap-1.5 px-3.5 py-2 rounded-full text-xs sm:text-sm font-bold text-slate-800 hover:text-emerald-900 bg-slate-100 hover:bg-emerald-50 border border-slate-200 hover:border-emerald-200 transition-colors"
             title={lang === 'fr' ? 'Switch to English' : 'Passer en Français'}
           >
-            <Globe className="w-4 h-4 text-blue-600" />
+            <Globe className="w-4 h-4 text-emerald-700" />
             <span className="font-mono uppercase">{lang}</span>
           </button>
 
@@ -93,19 +96,19 @@ export const Navbar: React.FC<NavbarProps> = ({ lang, setLang, onOpenResume }) =
           <button
             id="resume-btn"
             onClick={onOpenResume}
-            className="flex items-center gap-1.5 px-4 py-2 rounded-full text-xs sm:text-sm font-bold text-slate-800 bg-white hover:bg-slate-50 border border-slate-200 shadow-sm hover:border-slate-300 transition-all"
+            className="flex items-center gap-1.5 px-4 py-2 rounded-full text-xs sm:text-sm font-bold text-slate-800 bg-white hover:bg-slate-50 border border-slate-200 shadow-sm hover:border-emerald-300 transition-all"
           >
-            <Download className="w-4 h-4 text-blue-600" />
+            <Download className="w-4 h-4 text-emerald-700" />
             <span className="uppercase tracking-wider">CV</span>
           </button>
 
-          {/* Contact Direct CTA */}
+          {/* Contact Direct CTA with Togo Emerald/Gold */}
           <a
             id="nav-hire-btn"
             href="#contact"
-            className="flex items-center gap-2 px-5 py-2 rounded-full text-xs sm:text-sm font-bold text-white bg-slate-900 hover:bg-blue-600 shadow-sm transition-all transform hover:-translate-y-0.5 active:translate-y-0 uppercase tracking-wider"
+            className="flex items-center gap-2 px-5 py-2 rounded-full text-xs sm:text-sm font-bold text-white bg-emerald-800 hover:bg-emerald-700 shadow-sm shadow-emerald-900/10 border border-emerald-700 transition-all transform hover:-translate-y-0.5 active:translate-y-0 uppercase tracking-wider"
           >
-            <Mail className="w-4 h-4" />
+            <Mail className="w-4 h-4 text-amber-300" />
             <span>{lang === 'fr' ? 'Me Contacter' : 'Hire Me'}</span>
           </a>
         </div>
@@ -121,7 +124,7 @@ export const Navbar: React.FC<NavbarProps> = ({ lang, setLang, onOpenResume }) =
           <button
             id="mobile-menu-toggle"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="p-2 rounded-lg text-slate-700 hover:text-slate-950 bg-slate-100 border border-slate-200"
+            className="p-2 rounded-lg text-slate-700 hover:text-emerald-900 bg-slate-100 border border-slate-200"
             aria-label="Toggle Menu"
           >
             {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -141,7 +144,7 @@ export const Navbar: React.FC<NavbarProps> = ({ lang, setLang, onOpenResume }) =
                 key={item.href}
                 href={item.href}
                 onClick={() => setMobileMenuOpen(false)}
-                className="px-3 py-2 text-sm font-medium text-slate-700 hover:text-blue-600 hover:bg-slate-50 rounded-lg transition-colors"
+                className="px-3 py-2 text-sm font-medium text-slate-700 hover:text-emerald-800 hover:bg-emerald-50/60 rounded-lg transition-colors"
               >
                 {item.label}
               </a>
@@ -156,15 +159,15 @@ export const Navbar: React.FC<NavbarProps> = ({ lang, setLang, onOpenResume }) =
               }}
               className="w-full flex items-center justify-center gap-2 px-4 py-2 rounded-lg text-sm font-medium bg-slate-100 border border-slate-200 text-slate-800"
             >
-              <Download className="w-4 h-4 text-blue-600" />
+              <Download className="w-4 h-4 text-emerald-700" />
               <span>{lang === 'fr' ? 'Consulter le CV' : 'View Resume'}</span>
             </button>
             <a
               href="#contact"
               onClick={() => setMobileMenuOpen(false)}
-              className="w-full flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg text-sm font-semibold bg-slate-900 hover:bg-blue-600 text-white shadow-md transition-colors"
+              className="w-full flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg text-sm font-semibold bg-emerald-800 hover:bg-emerald-700 text-white shadow-md transition-colors"
             >
-              <Mail className="w-4 h-4" />
+              <Mail className="w-4 h-4 text-amber-300" />
               <span>{lang === 'fr' ? 'Discuter d\'un projet' : 'Start a Project'}</span>
             </a>
           </div>

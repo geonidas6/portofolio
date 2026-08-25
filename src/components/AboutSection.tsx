@@ -60,8 +60,8 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ lang }) => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Heading */}
         <div className="text-center max-w-3xl mx-auto space-y-3 mb-16">
-          <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-200 text-blue-700 text-xs font-mono tracking-[0.25em] uppercase font-bold">
-            <Sparkles className="w-3.5 h-3.5" />
+          <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs font-mono tracking-[0.25em] uppercase font-bold">
+            <Sparkles className="w-3.5 h-3.5 text-amber-600" />
             <span>{lang === 'fr' ? 'À PROPOS DE MOI' : 'ABOUT ME'}</span>
           </div>
           <h2 className="text-3xl sm:text-5xl font-serif text-slate-950 tracking-tight">
@@ -81,7 +81,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ lang }) => {
           <div className="lg:col-span-6 space-y-6">
             <div className="p-6 sm:p-8 rounded-2xl bg-white border border-slate-200/90 space-y-5 shadow-xl">
               <h3 className="text-xl sm:text-2xl font-serif font-bold text-slate-900 flex items-center gap-2.5">
-                <Globe2 className="w-6 h-6 text-blue-600" />
+                <Globe2 className="w-6 h-6 text-emerald-700" />
                 <span>{lang === 'fr' ? 'Mon Parcours & Philosophie' : 'My Background & Philosophy'}</span>
               </h3>
               
@@ -93,12 +93,12 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ lang }) => {
 
               <div className="pt-4 border-t border-slate-100 flex flex-wrap gap-2.5 text-xs sm:text-sm font-mono">
                 <span className="px-3.5 py-1.5 rounded-full bg-slate-100 border border-slate-200 text-slate-800 font-semibold">
-                  📍 {PERSONAL_INFO.location}
+                  📍 {PERSONAL_INFO.location} 🇹🇬
                 </span>
-                <span className="px-3.5 py-1.5 rounded-full bg-blue-50 text-blue-800 border border-blue-200 font-semibold">
+                <span className="px-3.5 py-1.5 rounded-full bg-emerald-50 text-emerald-900 border border-emerald-200 font-semibold">
                   ⚡ Full-Stack Web & Mobile
                 </span>
-                <span className="px-3.5 py-1.5 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200 font-semibold">
+                <span className="px-3.5 py-1.5 rounded-full bg-amber-50 text-amber-900 border border-amber-200 font-semibold">
                   🛡️ FinTech Specialist
                 </span>
               </div>
@@ -107,7 +107,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ lang }) => {
             {/* Quick Metrics Banner */}
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-3.5">
               <div className="p-4 rounded-xl bg-white border border-slate-200 text-center shadow-sm">
-                <div className="text-3xl font-serif font-bold text-blue-600">5+</div>
+                <div className="text-3xl font-serif font-bold text-amber-600">5+</div>
                 <div className="text-xs uppercase tracking-wider text-slate-600 font-semibold mt-1">{lang === 'fr' ? 'Années Exp.' : 'Years Exp.'}</div>
               </div>
               <div className="p-4 rounded-xl bg-white border border-slate-200 text-center shadow-sm">
@@ -115,11 +115,11 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ lang }) => {
                 <div className="text-xs uppercase tracking-wider text-slate-600 font-semibold mt-1">{lang === 'fr' ? 'Projets Conçus' : 'Projects Done'}</div>
               </div>
               <div className="p-4 rounded-xl bg-white border border-slate-200 text-center shadow-sm">
-                <div className="text-3xl font-serif font-bold text-emerald-600">1.2k+</div>
+                <div className="text-3xl font-serif font-bold text-emerald-700">1.2k+</div>
                 <div className="text-xs uppercase tracking-wider text-slate-600 font-semibold mt-1">{lang === 'fr' ? 'Downloads Pkg' : 'Pkg Downloads'}</div>
               </div>
               <div className="p-4 rounded-xl bg-white border border-slate-200 text-center shadow-sm">
-                <div className="text-3xl font-serif font-bold text-slate-900">100%</div>
+                <div className="text-3xl font-serif font-bold text-emerald-800">100%</div>
                 <div className="text-xs uppercase tracking-wider text-slate-600 font-semibold mt-1">{lang === 'fr' ? 'Satisfaction' : 'Satisfaction'}</div>
               </div>
             </div>
@@ -132,10 +132,10 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ lang }) => {
               return (
                 <div
                   key={idx}
-                  className="p-6 rounded-2xl bg-white border border-slate-200/90 hover:border-blue-400 transition-all hover:shadow-md group space-y-3.5 shadow-sm"
+                  className="p-6 rounded-2xl bg-white border border-slate-200/90 hover:border-emerald-400 transition-all hover:shadow-md group space-y-3.5 shadow-sm"
                 >
                   <div className="flex items-center justify-between">
-                    <div className="p-3 rounded-xl bg-slate-100 text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-colors border border-slate-200">
+                    <div className="p-3 rounded-xl bg-slate-100 text-emerald-800 group-hover:bg-emerald-800 group-hover:text-amber-300 transition-colors border border-slate-200">
                       <IconComp className="w-5 h-5" />
                     </div>
                     <span className="text-xs font-mono uppercase tracking-[0.2em] text-slate-600 px-3 py-1 rounded-full bg-slate-50 border border-slate-200 font-bold">
@@ -143,7 +143,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ lang }) => {
                     </span>
                   </div>
 
-                  <h4 className="text-base sm:text-lg font-bold text-slate-900 group-hover:text-blue-600 transition-colors">
+                  <h4 className="text-base sm:text-lg font-bold text-slate-900 group-hover:text-emerald-800 transition-colors">
                     {pillar.title}
                   </h4>
 

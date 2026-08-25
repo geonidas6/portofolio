@@ -56,8 +56,8 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ lang }) => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Heading */}
         <div className="text-center max-w-3xl mx-auto space-y-3 mb-16">
-          <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-200 text-blue-700 text-xs font-mono tracking-[0.25em] uppercase font-bold">
-            <Mail className="w-3.5 h-3.5" />
+          <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs font-mono tracking-[0.25em] uppercase font-bold">
+            <Mail className="w-3.5 h-3.5 text-amber-600" />
             <span>GET IN TOUCH</span>
           </div>
           <h2 className="text-3xl sm:text-5xl font-serif text-slate-950 tracking-tight">
@@ -81,7 +81,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ lang }) => {
               <div className="space-y-4">
                 {/* Email */}
                 <div className="flex items-start gap-4 p-4 rounded-xl bg-slate-50 border border-slate-200">
-                  <div className="p-3 rounded-lg bg-blue-50 text-blue-700 border border-blue-200">
+                  <div className="p-3 rounded-lg bg-emerald-50 text-emerald-700 border border-emerald-200">
                     <Mail className="w-5 h-5" />
                   </div>
                   <div className="flex-1 min-w-0">
@@ -89,7 +89,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ lang }) => {
                     <div className="text-sm sm:text-base font-bold text-slate-900 font-mono truncate">{PERSONAL_INFO.email}</div>
                     <button
                       onClick={handleCopyEmail}
-                      className="mt-1 flex items-center gap-1 text-xs sm:text-sm text-blue-600 hover:text-blue-800 transition-colors font-mono font-bold"
+                      className="mt-1 flex items-center gap-1 text-xs sm:text-sm text-emerald-800 hover:text-emerald-950 transition-colors font-mono font-bold"
                     >
                       {copied ? <Check className="w-3.5 h-3.5 text-emerald-600" /> : <Copy className="w-3.5 h-3.5" />}
                       <span>{copied ? 'Adresse copiée !' : 'Copier l\'adresse'}</span>
@@ -102,29 +102,29 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ lang }) => {
                   href={PERSONAL_INFO.githubUrl}
                   target="_blank"
                   rel="noreferrer"
-                  className="flex items-start gap-4 p-4 rounded-xl bg-slate-50 border border-slate-200 hover:border-blue-300 transition-colors group"
+                  className="flex items-start gap-4 p-4 rounded-xl bg-slate-50 border border-slate-200 hover:border-emerald-300 transition-colors group"
                 >
-                  <div className="p-3 rounded-lg bg-white text-slate-800 border border-slate-200 group-hover:text-blue-600 transition-colors">
+                  <div className="p-3 rounded-lg bg-white text-slate-800 border border-slate-200 group-hover:text-emerald-800 transition-colors">
                     <Github className="w-5 h-5" />
                   </div>
                   <div className="flex-1 min-w-0">
                     <div className="text-xs text-slate-500 font-mono font-semibold">GitHub Profile</div>
                     <div className="text-sm sm:text-base font-bold text-slate-900 font-mono flex items-center gap-1.5">
                       <span>@{PERSONAL_INFO.username}</span>
-                      <ExternalLink className="w-4 h-4 text-slate-400 group-hover:text-blue-600" />
+                      <ExternalLink className="w-4 h-4 text-slate-400 group-hover:text-emerald-800" />
                     </div>
-                    <div className="text-xs text-blue-700 font-bold mt-0.5">{PERSONAL_INFO.githubRankTogo}</div>
+                    <div className="text-xs text-emerald-800 font-bold mt-0.5">{PERSONAL_INFO.githubRankTogo}</div>
                   </div>
                 </a>
 
                 {/* Location & Timezone */}
                 <div className="flex items-start gap-4 p-4 rounded-xl bg-slate-50 border border-slate-200">
-                  <div className="p-3 rounded-lg bg-blue-50 text-blue-700 border border-blue-200">
+                  <div className="p-3 rounded-lg bg-emerald-50 text-emerald-700 border border-emerald-200">
                     <MapPin className="w-5 h-5" />
                   </div>
                   <div className="flex-1">
                     <div className="text-xs text-slate-500 font-mono font-semibold">Localisation</div>
-                    <div className="text-sm sm:text-base font-bold text-slate-900">Lomé, Togo</div>
+                    <div className="text-sm sm:text-base font-bold text-slate-900">Lomé, Togo 🇹🇬</div>
                     <div className="text-xs text-slate-600 flex items-center gap-1.5 mt-0.5 font-medium">
                       <Clock className="w-3.5 h-3.5 text-slate-400" />
                       <span>Fuseau horaire : GMT / UTC+0</span>
@@ -134,9 +134,9 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ lang }) => {
               </div>
 
               {/* Response SLA Note */}
-              <div className="p-4 rounded-xl bg-blue-50 border border-blue-200 flex items-center gap-3">
-                <div className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse shrink-0" />
-                <span className="text-xs sm:text-sm text-blue-900 font-semibold leading-normal">
+              <div className="p-4 rounded-xl bg-emerald-50 border border-emerald-200 flex items-center gap-3">
+                <div className="w-2.5 h-2.5 rounded-full bg-emerald-600 animate-pulse shrink-0" />
+                <span className="text-xs sm:text-sm text-emerald-950 font-semibold leading-normal">
                   {lang === 'fr' ? 'Disponibilité immédiate & Réponse garantie en moins de 24h.' : 'Immediate availability & guaranteed response within 24h.'}
                 </span>
               </div>
@@ -151,8 +151,8 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ lang }) => {
               </h3>
 
               {submitted ? (
-                <div className="p-6 rounded-xl bg-slate-50 border border-blue-200 text-center space-y-3">
-                  <CheckCircle2 className="w-10 h-10 text-blue-600 mx-auto" />
+                <div className="p-6 rounded-xl bg-slate-50 border border-emerald-200 text-center space-y-3">
+                  <CheckCircle2 className="w-10 h-10 text-emerald-700 mx-auto" />
                   <h4 className="text-lg font-serif font-bold text-slate-900">
                     {lang === 'fr' ? 'Votre client de messagerie a été ouvert !' : 'Your email client has been opened!'}
                   </h4>
@@ -161,11 +161,11 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ lang }) => {
                       ? 'Si votre application email ne s\'est pas lancée, vous pouvez directement m\'écrire à :'
                       : 'If your email app didn\'t launch automatically, please email me directly at:'}
                     <br />
-                    <strong className="text-blue-700 font-mono font-bold">{PERSONAL_INFO.email}</strong>
+                    <strong className="text-emerald-800 font-mono font-bold">{PERSONAL_INFO.email}</strong>
                   </p>
                   <button
                     onClick={() => setSubmitted(false)}
-                    className="mt-2 text-sm text-slate-600 hover:text-blue-600 underline font-semibold"
+                    className="mt-2 text-sm text-slate-600 hover:text-emerald-800 underline font-semibold"
                   >
                     {lang === 'fr' ? 'Renvoyer un autre message' : 'Send another message'}
                   </button>
@@ -183,7 +183,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ lang }) => {
                         value={formData.name}
                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                         placeholder="Ex: Jean Dupont"
-                        className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:border-blue-600 font-medium"
+                        className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:border-emerald-600 font-medium"
                       />
                     </div>
 
@@ -197,7 +197,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ lang }) => {
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                         placeholder="jean.dupont@example.com"
-                        className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:border-blue-600 font-medium"
+                        className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:border-emerald-600 font-medium"
                       />
                     </div>
                   </div>
@@ -210,7 +210,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ lang }) => {
                       <select
                         value={formData.projectType}
                         onChange={(e) => setFormData({ ...formData, projectType: e.target.value })}
-                        className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-sm text-slate-900 focus:outline-none focus:border-blue-600 font-medium"
+                        className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-sm text-slate-900 focus:outline-none focus:border-emerald-600 font-medium"
                       >
                         <option value="Application Web (Laravel / React / Next.js)">Application Web Full-Stack</option>
                         <option value="Application Mobile (Flutter / Dart)">Application Mobile (Flutter)</option>
@@ -229,7 +229,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ lang }) => {
                         value={formData.subject}
                         onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
                         placeholder={lang === 'fr' ? 'Ex: Nouveau projet e-commerce' : 'Ex: New project inquiry'}
-                        className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:border-blue-600 font-medium"
+                        className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:border-emerald-600 font-medium"
                       />
                     </div>
                   </div>
@@ -248,16 +248,16 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ lang }) => {
                           ? 'Détaillez vos besoins, vos délais ou toute information utile pour amorcer notre collaboration...'
                           : 'Describe your goals, timeline, or any technical questions you have...'
                       }
-                      className="w-full p-4 rounded-xl bg-slate-50 border border-slate-200 text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:border-blue-600 font-medium leading-relaxed"
+                      className="w-full p-4 rounded-xl bg-slate-50 border border-slate-200 text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:border-emerald-600 font-medium leading-relaxed"
                     />
                   </div>
 
                   <button
                     type="submit"
                     id="contact-form-submit-btn"
-                    className="w-full flex items-center justify-center gap-2 px-6 py-4 rounded-full font-bold text-white bg-blue-600 hover:bg-blue-700 shadow-md transition-all text-xs sm:text-sm uppercase tracking-wider"
+                    className="w-full flex items-center justify-center gap-2 px-6 py-4 rounded-full font-bold text-white bg-emerald-800 hover:bg-emerald-700 shadow-md transition-all text-xs sm:text-sm uppercase tracking-wider"
                   >
-                    <Send className="w-4 h-4" />
+                    <Send className="w-4 h-4 text-amber-300" />
                     <span>{lang === 'fr' ? 'Envoyer mon Message' : 'Send Message'}</span>
                   </button>
                 </form>

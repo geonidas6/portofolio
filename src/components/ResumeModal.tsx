@@ -43,18 +43,18 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose, lang 
         {/* Top Control Bar (Hidden on print) */}
         <div className="flex items-center justify-between pb-6 mb-6 border-b border-slate-200 print:hidden no-print">
           <div className="flex items-center gap-2">
-            <span className="px-3 py-1 rounded-full text-[10px] font-mono tracking-widest uppercase bg-blue-50 text-blue-700 border border-blue-200 font-semibold">
-              Curriculum Vitae • {PERSONAL_INFO.shortName}
+            <span className="px-3.5 py-1.5 rounded-full text-xs font-mono tracking-widest uppercase bg-emerald-50 text-emerald-800 border border-emerald-200 font-bold">
+              Curriculum Vitae • {PERSONAL_INFO.shortName} 🇹🇬
             </span>
           </div>
 
           <div className="flex items-center gap-2">
             <button
               onClick={handlePrint}
-              className="flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-bold bg-blue-600 text-white hover:bg-blue-700 transition-colors shadow-sm uppercase tracking-wider"
+              className="flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-bold bg-emerald-800 text-white hover:bg-emerald-700 transition-colors shadow-sm uppercase tracking-wider"
               title="Imprimer ou enregistrer au format PDF"
             >
-              <Printer className="w-4 h-4" />
+              <Printer className="w-4 h-4 text-amber-300" />
               <span>Imprimer / PDF</span>
             </button>
 
@@ -77,14 +77,14 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose, lang 
                 <h1 className="text-3xl sm:text-4xl font-serif font-bold text-slate-950 tracking-tight">
                   {PERSONAL_INFO.fullName}
                 </h1>
-                <p className="text-base sm:text-lg font-bold text-blue-700 mt-1">
+                <p className="text-base sm:text-lg font-bold text-emerald-800 mt-1">
                   {PERSONAL_INFO.title[lang]}
                 </p>
               </div>
 
               <div className="text-xs sm:text-sm text-slate-700 space-y-1.5 font-mono sm:text-right font-medium">
                 <div className="flex items-center sm:justify-end gap-1.5">
-                  <Mail className="w-4 h-4 text-blue-600" />
+                  <Mail className="w-4 h-4 text-emerald-700" />
                   <span>{PERSONAL_INFO.email}</span>
                 </div>
                 <div className="flex items-center sm:justify-end gap-1.5">
@@ -92,8 +92,8 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose, lang 
                   <span>github.com/{PERSONAL_INFO.username}</span>
                 </div>
                 <div className="flex items-center sm:justify-end gap-1.5">
-                  <MapPin className="w-4 h-4 text-slate-800" />
-                  <span>Lomé, Togo (Remote Worldwide)</span>
+                  <MapPin className="w-4 h-4 text-emerald-700" />
+                  <span>Lomé, Togo 🇹🇬 (Remote Worldwide)</span>
                 </div>
               </div>
             </div>
@@ -107,7 +107,7 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose, lang 
           {/* Key Competencies Matrix */}
           <div className="space-y-3">
             <h2 className="text-xs sm:text-sm font-mono uppercase tracking-[0.2em] text-slate-800 font-bold flex items-center gap-1.5 border-b border-slate-200 pb-1.5">
-              <Code className="w-4 h-4 text-blue-600" />
+              <Code className="w-4 h-4 text-emerald-700" />
               <span>Compétences Techniques & Technologies</span>
             </h2>
 
@@ -134,7 +134,7 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose, lang 
           {/* Work Experience */}
           <div className="space-y-4">
             <h2 className="text-xs sm:text-sm font-mono uppercase tracking-[0.2em] text-slate-800 font-bold flex items-center gap-1.5 border-b border-slate-200 pb-1.5">
-              <Briefcase className="w-4 h-4 text-blue-600" />
+              <Briefcase className="w-4 h-4 text-emerald-700" />
               <span>Expériences Professionnelles</span>
             </h2>
 
@@ -143,7 +143,7 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose, lang 
                 <div key={exp.id} className="space-y-2 p-4 rounded-xl bg-slate-50 border border-slate-200 print:bg-transparent print:border-none print:p-0">
                   <div className="flex flex-wrap items-center justify-between text-sm">
                     <span className="font-serif font-bold text-slate-950 text-base">{exp.role[lang]}</span>
-                    <span className="font-mono text-blue-700 font-bold">{exp.period}</span>
+                    <span className="font-mono text-emerald-800 font-bold">{exp.period}</span>
                   </div>
                   <div className="text-sm font-semibold text-slate-600">
                     {exp.company} — {exp.location} ({exp.type[lang]})
@@ -164,14 +164,14 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose, lang 
           {/* Open Source Highlight */}
           <div className="space-y-3">
             <h2 className="text-xs sm:text-sm font-mono uppercase tracking-[0.2em] text-slate-800 font-bold flex items-center gap-1.5 border-b border-slate-200 pb-1.5">
-              <Package className="w-4 h-4 text-blue-600" />
+              <Package className="w-4 h-4 text-emerald-700" />
               <span>Contributions Open Source & Packages</span>
             </h2>
 
-            <div className="p-4 rounded-xl bg-blue-50/60 border border-blue-200 text-sm space-y-1.5">
+            <div className="p-4 rounded-xl bg-amber-50/50 border border-amber-200 text-sm space-y-1.5">
               <div className="flex justify-between items-center">
                 <span className="font-bold text-slate-950 text-base">geonidas6/moneyfusion-laravel</span>
-                <span className="font-mono text-blue-800 font-bold text-xs sm:text-sm">1.2k+ Downloads • PHP / Laravel</span>
+                <span className="font-mono text-emerald-800 font-bold text-xs sm:text-sm">1.2k+ Downloads • PHP / Laravel</span>
               </div>
               <p className="text-slate-700 font-normal leading-relaxed">
                 Package Laravel pour automatiser l'intégration de la passerelle de paiement MoneyFusion, validation sécurisée des signatures et gestion des webhooks transactionnels.
@@ -182,7 +182,7 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose, lang 
           {/* Education */}
           <div className="space-y-3">
             <h2 className="text-xs sm:text-sm font-mono uppercase tracking-[0.2em] text-slate-800 font-bold flex items-center gap-1.5 border-b border-slate-200 pb-1.5">
-              <GraduationCap className="w-4 h-4 text-blue-600" />
+              <GraduationCap className="w-4 h-4 text-emerald-700" />
               <span>Formation & Diplômes</span>
             </h2>
 
@@ -193,7 +193,7 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose, lang 
                     <div className="font-bold text-slate-950 text-base">{edu.degree[lang]}</div>
                     <div className="text-slate-600 font-medium">{edu.institution} — {edu.location}</div>
                   </div>
-                  <span className="font-mono text-blue-700 font-bold">{edu.year}</span>
+                  <span className="font-mono text-emerald-800 font-bold">{edu.year}</span>
                 </div>
               ))}
             </div>

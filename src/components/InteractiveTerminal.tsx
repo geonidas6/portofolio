@@ -223,14 +223,14 @@ export const InteractiveTerminal: React.FC<InteractiveTerminalProps> = ({ lang, 
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Heading */}
         <div className="text-center max-w-2xl mx-auto space-y-3 mb-12">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50 border border-blue-200 text-blue-700 text-[10px] font-mono tracking-[0.25em] uppercase font-semibold">
-            <TerminalIcon className="w-3 h-3" />
+          <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs font-mono tracking-[0.25em] uppercase font-bold">
+            <TerminalIcon className="w-3.5 h-3.5 text-amber-600" />
             <span>DEVELOPER CLI CONSOLE</span>
           </div>
           <h2 className="text-3xl sm:text-5xl font-serif text-slate-950 tracking-tight">
             {lang === 'fr' ? 'Terminal CLI Interactif' : 'Interactive CLI Terminal'}
           </h2>
-          <p className="text-slate-600 text-xs sm:text-sm font-light">
+          <p className="text-slate-700 text-base sm:text-lg leading-relaxed font-normal">
             {lang === 'fr'
               ? 'Testez les commandes directes pour explorer le profil, les packages et les stacks de Patrice en ligne de commande.'
               : 'Execute direct CLI commands to inspect Patrice\'s background, packages, and technical skills.'}
@@ -242,11 +242,11 @@ export const InteractiveTerminal: React.FC<InteractiveTerminalProps> = ({ lang, 
           {/* Header Bar */}
           <div className="bg-slate-900/90 px-4 py-3 border-b border-slate-800 flex items-center justify-between">
             <div className="flex items-center gap-2">
-              <div className="w-3 h-3 rounded-full bg-rose-500/80" />
-              <div className="w-3 h-3 rounded-full bg-amber-500/80" />
-              <div className="w-3 h-3 rounded-full bg-emerald-500/80" />
-              <span className="text-slate-400 text-xs ml-2 font-mono">
-                akotse@portfolio: ~ (bash)
+              <div className="w-3 h-3 rounded-full bg-red-600 shadow-sm" title="Togo Red" />
+              <div className="w-3 h-3 rounded-full bg-amber-400 shadow-sm" title="Togo Yellow" />
+              <div className="w-3 h-3 rounded-full bg-emerald-500 shadow-sm" title="Togo Green" />
+              <span className="text-slate-300 text-xs ml-2 font-mono font-medium">
+                akotse@portfolio: ~ (bash) 🇹🇬
               </span>
             </div>
 
@@ -256,7 +256,7 @@ export const InteractiveTerminal: React.FC<InteractiveTerminalProps> = ({ lang, 
                 <button
                   key={cmd}
                   onClick={() => handleRunCommand(cmd)}
-                  className="px-2.5 py-0.5 rounded-full bg-slate-800 text-slate-300 hover:text-white hover:bg-slate-700 transition-colors text-[10px] uppercase tracking-wider font-semibold"
+                  className="px-2.5 py-0.5 rounded-full bg-slate-800 text-slate-300 hover:text-amber-300 hover:bg-slate-700 transition-colors text-[10px] uppercase tracking-wider font-semibold"
                 >
                   {cmd}
                 </button>
@@ -269,7 +269,7 @@ export const InteractiveTerminal: React.FC<InteractiveTerminalProps> = ({ lang, 
             {history.map((item, idx) => (
               <div key={idx} className="space-y-1">
                 <div className="flex items-center gap-2 text-slate-400">
-                  <span className="text-blue-400 font-bold">akotse@dev:~$</span>
+                  <span className="text-emerald-400 font-bold">akotse@dev:~$</span>
                   <span className="text-white font-semibold">{item.command}</span>
                 </div>
                 <div className="pl-4">{item.output}</div>
@@ -280,7 +280,7 @@ export const InteractiveTerminal: React.FC<InteractiveTerminalProps> = ({ lang, 
 
           {/* Terminal Input Bar */}
           <div className="p-3 bg-slate-900/90 border-t border-slate-800 flex items-center gap-2">
-            <span className="text-blue-400 font-bold shrink-0">akotse@dev:~$</span>
+            <span className="text-emerald-400 font-bold shrink-0">akotse@dev:~$</span>
             <input
               id="terminal-cli-input"
               type="text"
@@ -294,10 +294,10 @@ export const InteractiveTerminal: React.FC<InteractiveTerminalProps> = ({ lang, 
             />
             <button
               onClick={() => handleRunCommand(input)}
-              className="p-1.5 rounded-full bg-blue-600 hover:bg-blue-500 text-white transition-colors"
+              className="p-1.5 rounded-full bg-emerald-700 hover:bg-emerald-600 text-white transition-colors"
               title="Exécuter la commande"
             >
-              <CornerDownLeft className="w-3.5 h-3.5" />
+              <CornerDownLeft className="w-3.5 h-3.5 text-amber-300" />
             </button>
           </div>
         </div>

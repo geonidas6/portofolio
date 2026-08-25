@@ -47,17 +47,17 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose, la
         {/* Modal Header */}
         <div className="space-y-2 pr-10">
           <div className="flex flex-wrap items-center gap-2">
-            <span className="px-3 py-1 rounded-full text-xs font-mono font-bold uppercase bg-blue-50 text-blue-700 border border-blue-200 tracking-wider">
+            <span className="px-3 py-1 rounded-full text-xs font-mono font-bold uppercase bg-emerald-50 text-emerald-800 border border-emerald-200 tracking-wider">
               {project.category.toUpperCase()}
             </span>
             {project.featured && (
-              <span className="px-3 py-1 rounded-full text-xs font-mono bg-amber-100 text-amber-900 font-bold flex items-center gap-1 uppercase tracking-wider border border-amber-200">
-                <Star className="w-3.5 h-3.5 fill-amber-500 text-amber-500" />
+              <span className="px-3 py-1 rounded-full text-xs font-mono bg-amber-100 text-amber-950 font-bold flex items-center gap-1 uppercase tracking-wider border border-amber-300">
+                <Star className="w-3.5 h-3.5 fill-amber-500 text-amber-600" />
                 <span>Featured</span>
               </span>
             )}
             <span className="text-xs sm:text-sm text-slate-600 font-mono font-semibold flex items-center gap-1.5">
-              <Calendar className="w-4 h-4 text-blue-600" />
+              <Calendar className="w-4 h-4 text-emerald-700" />
               {project.year}
             </span>
           </div>
@@ -65,7 +65,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose, la
           <h3 className="text-2xl sm:text-4xl font-serif font-bold text-slate-950">
             {project.title}
           </h3>
-          <p className="text-base font-semibold text-blue-700">
+          <p className="text-base font-semibold text-emerald-800">
             {project.subtitle}
           </p>
         </div>
@@ -84,7 +84,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose, la
 
         {/* Full Description */}
         <div className="space-y-2">
-          <h4 className="text-xs font-mono uppercase tracking-[0.2em] text-blue-700 font-bold">
+          <h4 className="text-xs font-mono uppercase tracking-[0.2em] text-emerald-800 font-bold">
             {lang === 'fr' ? 'Présentation & Contexte' : 'Overview & Context'}
           </h4>
           <p className="text-sm sm:text-base text-slate-700 leading-relaxed bg-slate-50 p-5 rounded-xl border border-slate-200/80 font-normal">
@@ -95,14 +95,14 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose, la
         {/* Metrics Grid */}
         {project.metrics && project.metrics.length > 0 && (
           <div className="space-y-2">
-            <h4 className="text-xs font-mono uppercase tracking-[0.2em] text-blue-700 font-bold flex items-center gap-1.5">
-              <BarChart3 className="w-4 h-4 text-blue-600" />
+            <h4 className="text-xs font-mono uppercase tracking-[0.2em] text-emerald-800 font-bold flex items-center gap-1.5">
+              <BarChart3 className="w-4 h-4 text-emerald-700" />
               <span>{lang === 'fr' ? 'Impact & Métriques Clés' : 'Impact & Key Metrics'}</span>
             </h4>
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
               {project.metrics.map((metric, idx) => (
-                <div key={idx} className="p-3.5 rounded-xl bg-slate-50 border border-slate-200 text-center">
-                  <div className="text-xl font-serif font-bold text-blue-700">{metric.value}</div>
+                <div key={idx} className="p-3.5 rounded-xl bg-amber-50/50 border border-amber-200 text-center">
+                  <div className="text-xl font-serif font-bold text-emerald-800">{metric.value}</div>
                   <div className="text-xs uppercase tracking-wider text-slate-600 font-semibold mt-0.5">{metric.label}</div>
                 </div>
               ))}
@@ -112,14 +112,14 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose, la
 
         {/* Highlights & Solved Challenges */}
         <div className="space-y-2">
-          <h4 className="text-xs font-mono uppercase tracking-[0.2em] text-blue-700 font-bold flex items-center gap-1.5">
-            <CheckCircle2 className="w-4 h-4 text-blue-600" />
+          <h4 className="text-xs font-mono uppercase tracking-[0.2em] text-emerald-800 font-bold flex items-center gap-1.5">
+            <CheckCircle2 className="w-4 h-4 text-emerald-600" />
             <span>{lang === 'fr' ? 'Fonctionnalités & Réalisations Techniques' : 'Key Features & Engineering Highlights'}</span>
           </h4>
           <ul className="space-y-2.5 text-sm sm:text-base text-slate-800">
             {project.highlights.map((highlight, idx) => (
               <li key={idx} className="flex items-start gap-3 bg-slate-50 p-3.5 rounded-lg border border-slate-200/80">
-                <span className="w-2 h-2 rounded-full bg-blue-600 mt-2 shrink-0" />
+                <span className="w-2 h-2 rounded-full bg-emerald-600 mt-2 shrink-0" />
                 <span className="leading-relaxed">{highlight}</span>
               </li>
             ))}
@@ -129,14 +129,14 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose, la
         {/* Architecture Details */}
         {project.architecture && project.architecture.length > 0 && (
           <div className="space-y-2">
-            <h4 className="text-xs font-mono uppercase tracking-[0.2em] text-blue-700 font-bold flex items-center gap-1.5">
-              <Layers className="w-4 h-4 text-blue-600" />
+            <h4 className="text-xs font-mono uppercase tracking-[0.2em] text-emerald-800 font-bold flex items-center gap-1.5">
+              <Layers className="w-4 h-4 text-emerald-700" />
               <span>{lang === 'fr' ? 'Choix d\'Architecture & Conception' : 'Architecture & Design Choices'}</span>
             </h4>
             <ul className="space-y-2 text-xs sm:text-sm text-slate-700">
               {project.architecture.map((arch, idx) => (
                 <li key={idx} className="flex items-center gap-2 font-mono bg-slate-50/60 p-2 rounded-md">
-                  <span className="text-blue-600 font-bold">▹</span>
+                  <span className="text-emerald-700 font-bold">▹</span>
                   <span>{arch}</span>
                 </li>
               ))}
@@ -157,9 +157,9 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose, la
                 href={project.packageUrl}
                 target="_blank"
                 rel="noreferrer"
-                className="flex-1 sm:flex-initial inline-flex items-center justify-center gap-1.5 px-5 py-2.5 rounded-full text-xs sm:text-sm font-mono font-bold bg-blue-600 hover:bg-blue-700 text-white transition-colors shadow-sm"
+                className="flex-1 sm:flex-initial inline-flex items-center justify-center gap-1.5 px-5 py-2.5 rounded-full text-xs sm:text-sm font-mono font-bold bg-emerald-800 hover:bg-emerald-700 text-white transition-colors shadow-sm"
               >
-                <Package className="w-4 h-4" />
+                <Package className="w-4 h-4 text-amber-300" />
                 <span>Packagist</span>
               </a>
             )}
@@ -169,7 +169,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose, la
                 href={project.githubUrl}
                 target="_blank"
                 rel="noreferrer"
-                className="flex-1 sm:flex-initial inline-flex items-center justify-center gap-1.5 px-4 py-2 rounded-full text-xs font-mono font-medium bg-slate-100 hover:bg-slate-200 text-slate-900 border border-slate-200 transition-colors shadow-sm"
+                className="flex-1 sm:flex-initial inline-flex items-center justify-center gap-1.5 px-4 py-2.5 rounded-full text-xs font-mono font-medium bg-slate-100 hover:bg-slate-200 text-slate-900 border border-slate-200 transition-colors shadow-sm"
               >
                 <Github className="w-4 h-4" />
                 <span>Code Source</span>
@@ -181,9 +181,9 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose, la
                 href={project.liveUrl}
                 target="_blank"
                 rel="noreferrer"
-                className="flex-1 sm:flex-initial inline-flex items-center justify-center gap-1.5 px-4 py-2 rounded-full text-xs font-mono font-bold bg-blue-600 hover:bg-blue-700 text-white transition-colors shadow-sm"
+                className="flex-1 sm:flex-initial inline-flex items-center justify-center gap-1.5 px-4 py-2.5 rounded-full text-xs font-mono font-bold bg-emerald-800 hover:bg-emerald-700 text-white transition-colors shadow-sm"
               >
-                <ExternalLink className="w-4 h-4" />
+                <ExternalLink className="w-4 h-4 text-amber-300" />
                 <span>Live Demo</span>
               </a>
             )}
