@@ -1,0 +1,6 @@
+# Robots.txt for AKOTSE Kokou Patrice Edem Portfolio
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://patriceakotse.com/sitemap.xml
