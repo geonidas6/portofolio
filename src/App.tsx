@@ -10,6 +10,7 @@ import { ProjectEstimator } from './components/ProjectEstimator';
 import { ContactSection } from './components/ContactSection';
 import { Footer } from './components/Footer';
 import { ResumeModal } from './components/ResumeModal';
+import { Seo } from './components/Seo';
 import { Language } from './types';
 
 export default function App() {
@@ -18,6 +19,8 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-white text-slate-900 flex flex-col font-sans selection:bg-blue-100 selection:text-blue-900">
+      <Seo lang={lang} />
+
       {/* Navigation Bar */}
       <Navbar
         lang={lang}
@@ -26,7 +29,7 @@ export default function App() {
       />
 
       {/* Main Content */}
-      <main className="flex-1">
+      <main id="main-content" className="flex-1">
         {/* 1. Hero Section */}
         <Hero
           lang={lang}

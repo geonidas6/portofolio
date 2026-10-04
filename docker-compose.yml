@@ -7,7 +7,7 @@ services:
     container_name: portfolio_patrice
     env_file: .env
     environment:
-      - DOMAIN=${DOMAIN:-patriceakotse.com}
+      - DOMAIN=${DOMAIN:-it-sefako.com}
     # No need for separate volumes unless we want to persist something
     # volumes:
     #   - .:/var/www/html

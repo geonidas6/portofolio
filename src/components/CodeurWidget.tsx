@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { ShieldCheck, Star, ExternalLink, Award, CheckCircle } from 'lucide-react';
 import { Language } from '../types';
 
@@ -7,20 +7,40 @@ interface CodeurWidgetProps {
 }
 
 export const CodeurWidget: React.FC<CodeurWidgetProps> = ({ lang }) => {
+  const widgetRef = useRef<HTMLDivElement>(null);
+
   useEffect(() => {
-    // Check if script is already present
-    const existingScript = document.getElementById('codeur-widget-script');
-    if (!existingScript) {
+    const loadWidget = () => {
+      if (document.getElementById('codeur-widget-script')) return;
+
       const script = document.createElement('script');
       script.id = 'codeur-widget-script';
       script.src = 'https://api.codeur.com/widgets/profile.js?k=D4ZZGH0CoTeU7O7A';
       script.async = true;
+      script.defer = true;
       document.body.appendChild(script);
+    };
+
+    if (!('IntersectionObserver' in window) || !widgetRef.current) {
+      loadWidget();
+      return;
     }
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (!entry.isIntersecting) return;
+        loadWidget();
+        observer.disconnect();
+      },
+      { rootMargin: '400px 0px' },
+    );
+
+    observer.observe(widgetRef.current);
+    return () => observer.disconnect();
   }, []);
 
   return (
-    <div className="w-full rounded-2xl bg-white border border-slate-200/90 shadow-md p-6 sm:p-7 space-y-4 hover:shadow-lg transition-all duration-300">
+    <div ref={widgetRef} className="w-full rounded-2xl bg-white border border-slate-200/90 shadow-md p-6 sm:p-7 space-y-4 hover:shadow-lg transition-all duration-300">
       {/* Widget Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-slate-100">
         <div className="flex items-center gap-3.5">
