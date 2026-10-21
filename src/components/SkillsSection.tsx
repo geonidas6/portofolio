@@ -11,7 +11,8 @@ import {
   Sparkles, 
   Flame, 
   Code2, 
-  Layers 
+  Layers,
+  ShoppingBag
 } from 'lucide-react';
 import { SKILLS_CATEGORIES } from '../data/portfolioData';
 import { Language } from '../types';
@@ -26,7 +27,8 @@ const iconMap: Record<string, React.ElementType> = {
   Smartphone,
   Database,
   Cloud,
-  CreditCard
+  CreditCard,
+  ShoppingBag
 };
 
 export const SkillsSection: React.FC<SkillsSectionProps> = ({ lang }) => {
@@ -62,19 +64,19 @@ export const SkillsSection: React.FC<SkillsSectionProps> = ({ lang }) => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Heading */}
         <div className="text-center max-w-3xl mx-auto space-y-3 mb-14">
-          <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-200 text-blue-700 text-xs font-mono tracking-[0.25em] uppercase font-bold">
-            <Code2 className="w-3.5 h-3.5" />
-            <span>{lang === 'fr' ? 'ARSENAL TECHNIQUE' : 'TECHNICAL STACK'}</span>
+          <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs font-mono tracking-[0.25em] uppercase font-bold">
+            <Code2 className="w-3.5 h-3.5 text-amber-600" />
+            <span>{lang === 'fr' ? 'COMPÉTENCES TECHNIQUES' : 'TECHNICAL SKILLS'}</span>
           </div>
           <h2 className="text-3xl sm:text-5xl font-serif text-slate-950 tracking-tight">
             {lang === 'fr'
-              ? 'Compétences Techniques & Maîtrise des Outils'
-              : 'Technical Skills & Tool Mastery'}
+              ? 'Technologies, Frameworks & Écosystèmes'
+              : 'Technologies, Frameworks & Ecosystems'}
           </h2>
           <p className="text-slate-700 text-base sm:text-lg leading-relaxed font-normal">
             {lang === 'fr'
-              ? 'Une panoplie complète de technologies modernes pour concevoir des architectures robustes du backend au frontend jusqu\'aux applications mobiles.'
-              : 'A comprehensive modern stack to design robust architectures from backend to frontend and mobile platforms.'}
+              ? 'Un éventail de compétences exhaustif : Front-End JS, Back-End (PHP/Python/Java), Mobile (iOS & Flutter), E-Commerce (WordPress & PrestaShop) et DevOps continu.'
+              : 'A comprehensive technical stack: Front-End JS, Back-End (PHP/Python/Java), Mobile (iOS & Flutter), E-Commerce (WordPress & PrestaShop), and continuous DevOps.'}
           </p>
         </div>
 
@@ -86,11 +88,11 @@ export const SkillsSection: React.FC<SkillsSectionProps> = ({ lang }) => {
               onClick={() => setActiveCategory('all')}
               className={`px-4 py-2 rounded-full text-xs sm:text-sm font-mono transition-all uppercase tracking-wider ${
                 activeCategory === 'all'
-                  ? 'bg-slate-900 text-white font-bold shadow-sm'
+                  ? 'bg-emerald-800 text-white font-bold shadow-sm'
                   : 'bg-slate-100 text-slate-700 hover:text-slate-950 hover:bg-slate-200 border border-slate-200 font-medium'
               }`}
             >
-              {lang === 'fr' ? 'Tous' : 'All'} ({totalSkillsCount})
+              {lang === 'fr' ? 'Toutes' : 'All'} ({totalSkillsCount})
             </button>
             {SKILLS_CATEGORIES.map((cat) => {
               const IconComponent = iconMap[cat.icon] || Layers;
@@ -101,7 +103,7 @@ export const SkillsSection: React.FC<SkillsSectionProps> = ({ lang }) => {
                   onClick={() => setActiveCategory(cat.id)}
                   className={`flex items-center gap-2 px-4 py-2 rounded-full text-xs sm:text-sm font-mono transition-all whitespace-nowrap uppercase tracking-wider ${
                     isActive
-                      ? 'bg-slate-900 text-white font-bold shadow-sm'
+                      ? 'bg-emerald-800 text-white font-bold shadow-sm'
                       : 'bg-slate-100 text-slate-700 hover:text-slate-950 hover:bg-slate-200 border border-slate-200 font-medium'
                   }`}
                 >
@@ -119,8 +121,8 @@ export const SkillsSection: React.FC<SkillsSectionProps> = ({ lang }) => {
               type="text"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              placeholder={lang === 'fr' ? 'Rechercher une technologie...' : 'Search skill or stack...'}
-              className="w-full pl-10 pr-4 py-2.5 rounded-full bg-slate-100 border border-slate-200 text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:border-blue-600 transition-colors font-medium"
+              placeholder={lang === 'fr' ? 'Rechercher une compétence...' : 'Search skill or stack...'}
+              className="w-full pl-10 pr-4 py-2.5 rounded-full bg-slate-100 border border-slate-200 text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:border-emerald-600 transition-colors font-medium"
             />
             {searchQuery && (
               <button
@@ -148,7 +150,7 @@ export const SkillsSection: React.FC<SkillsSectionProps> = ({ lang }) => {
                 <div key={category.id} className="space-y-4">
                   {activeCategory === 'all' && (
                     <div className="flex items-center gap-2 text-slate-900 font-serif font-bold text-xl border-b border-slate-200 pb-2">
-                      <CategoryIcon className="w-5 h-5 text-blue-600" />
+                      <CategoryIcon className="w-5 h-5 text-emerald-800" />
                       <span>{category.title[lang]}</span>
                     </div>
                   )}
@@ -159,7 +161,7 @@ export const SkillsSection: React.FC<SkillsSectionProps> = ({ lang }) => {
                         key={sIdx}
                         className={`p-6 rounded-2xl border transition-all duration-200 relative group flex flex-col justify-between ${
                           skill.highlight
-                            ? 'bg-blue-50/40 border-blue-200/90 shadow-sm'
+                            ? 'bg-emerald-50/30 border-emerald-200/90 shadow-sm'
                             : 'bg-white border-slate-200/90 hover:border-slate-300 hover:shadow-md'
                         }`}
                       >
@@ -172,7 +174,7 @@ export const SkillsSection: React.FC<SkillsSectionProps> = ({ lang }) => {
 
                         <div className="space-y-3">
                           <div className="flex items-center justify-between pr-28">
-                            <h4 className="text-lg font-bold text-slate-900 group-hover:text-blue-600 transition-colors">
+                            <h4 className="text-lg font-bold text-slate-900 group-hover:text-emerald-800 transition-colors">
                               {skill.name}
                             </h4>
                           </div>
@@ -180,12 +182,12 @@ export const SkillsSection: React.FC<SkillsSectionProps> = ({ lang }) => {
                           {/* Level Progress Bar */}
                           <div className="space-y-1.5">
                             <div className="flex justify-between text-sm font-mono text-slate-600">
-                              <span>{lang === 'fr' ? 'Expérience' : 'Experience'}: <strong className="text-slate-900 font-bold">{skill.experience}</strong></span>
-                              <span className="text-blue-700 font-bold">{skill.level}%</span>
+                              <span>{lang === 'fr' ? 'Pratique' : 'Practice'}: <strong className="text-slate-900 font-bold">{skill.experience}</strong></span>
+                              <span className="text-emerald-800 font-bold">{skill.level}%</span>
                             </div>
                             <div className="h-2 w-full bg-slate-100 rounded-full overflow-hidden">
                               <div
-                                className="h-full bg-gradient-to-r from-blue-600 to-indigo-600 rounded-full transition-all duration-500"
+                                className="h-full bg-gradient-to-r from-emerald-700 to-amber-500 rounded-full transition-all duration-500"
                                 style={{ width: `${skill.level}%` }}
                               />
                             </div>
@@ -198,7 +200,7 @@ export const SkillsSection: React.FC<SkillsSectionProps> = ({ lang }) => {
 
                         {skill.popularUse && (
                           <div className="mt-4 pt-3 border-t border-slate-100 flex items-center gap-2 text-xs sm:text-sm text-slate-600 font-mono">
-                            <span className="text-blue-700 font-bold">Stack:</span>
+                            <span className="text-emerald-800 font-bold">Stack:</span>
                             <span className="truncate text-slate-800 font-semibold">{skill.popularUse}</span>
                           </div>
                         )}

@@ -34,11 +34,57 @@
 }
 
 @media print {
-  body {
-    background: white !important;
-    color: black !important;
+  @page {
+    margin: 12mm 15mm;
+    size: A4 portrait;
   }
-  .no-print {
+  
+  html, body {
+    background: white !important;
+    color: #0f172a !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Hide regular page elements */
+  #main-content, nav, footer, .no-print {
     display: none !important;
+  }
+
+  /* Expand modal cleanly for print / PDF output */
+  #resume-modal {
+    position: static !important;
+    inset: auto !important;
+    background: white !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    display: block !important;
+    backdrop-filter: none !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow: visible !important;
+    height: auto !important;
+  }
+
+  #resume-modal-content {
+    max-width: 100% !important;
+    max-height: none !important;
+    overflow: visible !important;
+    box-shadow: none !important;
+    border: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    border-radius: 0 !important;
+  }
+
+  /* Prevent split cuts inside skill & project items */
+  h1, h2, h3 {
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+
+  .rounded-xl, .rounded-lg {
+    break-inside: avoid;
+    page-break-inside: avoid;
   }
 }

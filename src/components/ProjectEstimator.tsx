@@ -10,7 +10,11 @@ import {
   CreditCard, 
   Copy, 
   MessageSquare, 
-  ChevronRight 
+  ChevronRight,
+  ShoppingBag,
+  Smartphone,
+  Globe,
+  Package
 } from 'lucide-react';
 import { PERSONAL_INFO } from '../data/portfolioData';
 import { Language } from '../types';
@@ -52,31 +56,38 @@ export const ProjectEstimator: React.FC<ProjectEstimatorProps> = ({ lang }) => {
     },
     {
       id: 'mobile',
-      name: { fr: 'Application Mobile iOS & Android (Flutter)', en: 'Mobile App iOS & Android (Flutter)' },
+      name: { fr: 'Application Mobile (iOS Swift / Flutter)', en: 'Mobile App (iOS Swift / Flutter)' },
       baseWeeks: 4,
       icon: 'Smartphone'
     },
     {
+      id: 'ecommerce',
+      name: { fr: 'Boutique E-Commerce / CMS (WordPress, WooCommerce, PrestaShop)', en: 'E-Commerce / CMS Store (WordPress, WooCommerce, PrestaShop)' },
+      baseWeeks: 3,
+      icon: 'ShoppingBag'
+    },
+    {
       id: 'fullstack',
-      name: { fr: 'Plateforme Complète Web + Mobile + API', en: 'Full Platform Web + Mobile + API' },
+      name: { fr: 'SaaS / Plateforme Complète Web + Mobile + API', en: 'Full SaaS Platform Web + Mobile + API' },
       baseWeeks: 6,
       icon: 'Layers'
     },
     {
-      id: 'fintech',
-      name: { fr: 'Microservice API & Passerelle Paiement (MoneyFusion/Stripe)', en: 'API Microservice & Payment Gateway' },
+      id: 'package',
+      name: { fr: 'Package Open-Source Laravel / API Passerelle Paiement', en: 'Open-Source Laravel Package / Payment Gateway API' },
       baseWeeks: 2,
-      icon: 'CreditCard'
+      icon: 'Package'
     }
   ];
 
   const featuresList: FeatureOption[] = [
     { id: 'auth', name: { fr: 'Authentification sécurisée, Rôles & Permissions (RBAC)', en: 'Secure Auth, Roles & Permissions (RBAC)' }, weeks: 1, category: 'Core' },
-    { id: 'payments', name: { fr: 'Intégration Paiements (MoneyFusion, Mobile Money, Stripe)', en: 'Payment Gateways (MoneyFusion, Mobile Money, Stripe)' }, weeks: 1.5, category: 'FinTech' },
+    { id: 'payments', name: { fr: 'Paiements Sécurisés (MoneyFusion, Mobile Money, Cartes)', en: 'Payment Gateways (MoneyFusion, Mobile Money, Cards)' }, weeks: 1.5, category: 'FinTech' },
+    { id: 'app_store', name: { fr: 'Publication App Store & Achats In-App (StoreKit)', en: 'App Store Submission & In-App Purchases (StoreKit)' }, weeks: 1.5, category: 'Mobile' },
     { id: 'dashboard', name: { fr: 'Tableau de bord interactif & Graphiques statistiques', en: 'Interactive Analytics & Reporting Dashboard' }, weeks: 1, category: 'UI' },
     { id: 'realtime', name: { fr: 'Temps réel & Notifications (WebSockets / Push FCM)', en: 'Real-time & Notifications (WebSockets / Push FCM)' }, weeks: 1, category: 'Features' },
-    { id: 'offline', name: { fr: 'Mode Hors-ligne & Synchronisation automatique', en: 'Offline-First Mode & Data Sync' }, weeks: 1.5, category: 'Mobile' },
-    { id: 'docker_aws', name: { fr: 'Conteneurisation Docker & Déploiement Cloud AWS', en: 'Docker Containerization & AWS Cloud Deployment' }, weeks: 1, category: 'DevOps' },
+    { id: 'ecommerce_catalog', name: { fr: 'Catalogue produits, variations & gestion de stock', en: 'Product catalog, variations & inventory sync' }, weeks: 1, category: 'E-Commerce' },
+    { id: 'devops_deploy', name: { fr: 'Hébergement, Nginx/SSL & Déploiement Continu', en: 'Hosting, Nginx/SSL & Continuous Deployment' }, weeks: 1, category: 'DevOps' },
   ];
 
   const toggleFeature = (id: string) => {
@@ -105,17 +116,17 @@ export const ProjectEstimator: React.FC<ProjectEstimatorProps> = ({ lang }) => {
       .filter(Boolean)
       .join('\n- ');
 
-    return `Bonjour Patrice,\n\nJe souhaite développer un projet avec les spécifications suivantes :\n\n- Type : ${calculation.platformName}\n- Fonctionnalités sélectionnées :\n- ${featNames}\n- Estimation indicative : ~${calculation.weeks} semaines\n${projectDescription ? `- Note complémentaire : ${projectDescription}\n` : ''}\nRestant à votre disposition pour échanger sur le cadrage technique.`;
+    return `Bonjour Patrice,\n\nJe souhaite développer un projet avec les spécifications suivantes :\n\n- Type : ${calculation.platformName}\n- Fonctionnalités sélectionnées :\n- ${featNames}\n- Estimation indicative : ~${calculation.weeks} semaines\n${projectDescription ? `- Note complémentaire : ${projectDescription}\n` : ''}\nRestant à votre disposition pour échanger sur le cadrage technique et le devis.`;
   }, [calculation, selectedFeatures, projectDescription, lang]);
 
   const handleCopyBrief = () => {
     navigator.clipboard.writeText(generatedBrief);
     setCopiedBrief(true);
-    setTimeout(() => setCopiedBrief(false), 2500);
+    setTimeout(() => setCopiedBrief(false), 2000);
   };
 
   const handleSendEmail = () => {
-    const subject = encodeURIComponent(`Nouveau Projet : ${calculation.platformName}`);
+    const subject = encodeURIComponent(`Demande de projet - ${calculation.platformName}`);
     const body = encodeURIComponent(generatedBrief);
     window.location.href = `mailto:${PERSONAL_INFO.email}?subject=${subject}&body=${body}`;
   };
@@ -125,16 +136,16 @@ export const ProjectEstimator: React.FC<ProjectEstimatorProps> = ({ lang }) => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Heading */}
         <div className="text-center max-w-3xl mx-auto space-y-3 mb-14">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50 border border-blue-200 text-blue-700 text-[10px] font-mono tracking-[0.25em] uppercase font-semibold">
-            <Calculator className="w-3 h-3" />
-            <span>PROJECT SCOPE & ESTIMATOR</span>
+          <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs font-mono tracking-[0.25em] uppercase font-bold">
+            <Calculator className="w-3.5 h-3.5 text-amber-600" />
+            <span>CALCULATEUR DE PROJET & DEVIS</span>
           </div>
           <h2 className="text-3xl sm:text-5xl font-serif text-slate-950 tracking-tight">
             {lang === 'fr' ? 'Estimez Votre Projet en Quelques Clics' : 'Estimate Your Project Scope'}
           </h2>
-          <p className="text-slate-600 text-sm sm:text-base leading-relaxed font-light">
+          <p className="text-slate-700 text-base sm:text-lg leading-relaxed font-normal">
             {lang === 'fr'
-              ? 'Configurez votre besoin (Web, Mobile, FinTech), choisissez vos modules clés et générez un brief technique prêt à l\'envoi.'
+              ? 'Sélectionnez votre type de projet (Web, Mobile iOS, E-Commerce, Package Laravel), vos modules requis et générez un brief technique structuré.'
               : 'Select your platform, key modules, and instantly generate a structured technical brief.'}
           </p>
         </div>
@@ -145,7 +156,7 @@ export const ProjectEstimator: React.FC<ProjectEstimatorProps> = ({ lang }) => {
             {/* 1. Platform Choice */}
             <div className="p-6 rounded-2xl bg-white border border-slate-200/90 space-y-4 shadow-sm">
               <h3 className="text-xs font-bold text-slate-900 uppercase font-mono tracking-wider flex items-center gap-2">
-                <span className="w-6 h-6 rounded-full bg-blue-50 border border-blue-200 text-blue-700 font-bold flex items-center justify-center text-xs">1</span>
+                <span className="w-6 h-6 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-800 font-bold flex items-center justify-center text-xs">1</span>
                 <span>{lang === 'fr' ? 'Plateforme / Nature du Projet' : 'Platform / Nature of Project'}</span>
               </h3>
 
@@ -158,13 +169,13 @@ export const ProjectEstimator: React.FC<ProjectEstimatorProps> = ({ lang }) => {
                       onClick={() => setSelectedPlatform(plat.id)}
                       className={`p-4 rounded-xl border text-left transition-all ${
                         isSelected
-                          ? 'bg-blue-50/60 border-blue-600 text-slate-950 shadow-sm'
-                          : 'bg-white border-slate-200 text-slate-600 hover:border-slate-300 hover:text-slate-950'
+                          ? 'bg-emerald-50/60 border-emerald-700 text-slate-950 shadow-sm'
+                          : 'bg-white border-slate-200 text-slate-600 hover:border-emerald-300 hover:text-slate-950'
                       }`}
                     >
                       <div className="flex items-center justify-between mb-1.5">
                         <span className="text-xs font-bold text-slate-900">{plat.name[lang].split('(')[0]}</span>
-                        {isSelected && <Check className="w-4 h-4 text-blue-600" />}
+                        {isSelected && <Check className="w-4 h-4 text-emerald-700" />}
                       </div>
                       <div className="text-[11px] text-slate-500 font-light">
                         {plat.name[lang].includes('(') ? `(${plat.name[lang].split('(')[1]}` : ''}
@@ -178,7 +189,7 @@ export const ProjectEstimator: React.FC<ProjectEstimatorProps> = ({ lang }) => {
             {/* 2. Feature Modules */}
             <div className="p-6 rounded-2xl bg-white border border-slate-200/90 space-y-4 shadow-sm">
               <h3 className="text-xs font-bold text-slate-900 uppercase font-mono tracking-wider flex items-center gap-2">
-                <span className="w-6 h-6 rounded-full bg-blue-50 border border-blue-200 text-blue-700 font-bold flex items-center justify-center text-xs">2</span>
+                <span className="w-6 h-6 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-800 font-bold flex items-center justify-center text-xs">2</span>
                 <span>{lang === 'fr' ? 'Fonctionnalités & Modules Requis' : 'Required Features & Modules'}</span>
               </h3>
 
@@ -191,7 +202,7 @@ export const ProjectEstimator: React.FC<ProjectEstimatorProps> = ({ lang }) => {
                       onClick={() => toggleFeature(feat.id)}
                       className={`w-full p-3 rounded-xl border flex items-center justify-between text-left transition-all text-xs ${
                         isChecked
-                          ? 'bg-blue-50/50 border-blue-300 text-slate-900'
+                          ? 'bg-emerald-50/50 border-emerald-300 text-slate-900 font-medium'
                           : 'bg-white border-slate-200 text-slate-600 hover:text-slate-900'
                       }`}
                     >
@@ -199,11 +210,11 @@ export const ProjectEstimator: React.FC<ProjectEstimatorProps> = ({ lang }) => {
                         <div
                           className={`w-4 h-4 rounded border flex items-center justify-center ${
                             isChecked
-                              ? 'bg-blue-600 border-blue-600 text-white'
+                              ? 'bg-emerald-800 border-emerald-800 text-white'
                               : 'border-slate-300 bg-white'
                           }`}
                         >
-                          {isChecked && <Check className="w-3 h-3 stroke-[3]" />}
+                          {isChecked && <Check className="w-3 h-3 stroke-[3] text-amber-300" />}
                         </div>
                         <span className="font-medium text-slate-800">{feat.name[lang]}</span>
                       </div>
@@ -219,7 +230,7 @@ export const ProjectEstimator: React.FC<ProjectEstimatorProps> = ({ lang }) => {
             {/* 3. Additional Context */}
             <div className="p-6 rounded-2xl bg-white border border-slate-200/90 space-y-3 shadow-sm">
               <h3 className="text-xs font-bold text-slate-900 uppercase font-mono tracking-wider flex items-center gap-2">
-                <span className="w-6 h-6 rounded-full bg-blue-50 border border-blue-200 text-blue-700 font-bold flex items-center justify-center text-xs">3</span>
+                <span className="w-6 h-6 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-800 font-bold flex items-center justify-center text-xs">3</span>
                 <span>{lang === 'fr' ? 'Détails complémentaires (Optionnel)' : 'Additional Context (Optional)'}</span>
               </h3>
               <textarea
@@ -230,7 +241,7 @@ export const ProjectEstimator: React.FC<ProjectEstimatorProps> = ({ lang }) => {
                     ? 'Décrivez brièvement vos objectifs, délai souhaité ou contraintes techniques particulières...'
                     : 'Describe your main goals, target deadline, or technical constraints...'
                 }
-                className="w-full h-24 p-3 rounded-xl bg-slate-50 border border-slate-200 text-xs text-slate-900 placeholder-slate-400 focus:outline-none focus:border-blue-600 font-light"
+                className="w-full h-24 p-3 rounded-xl bg-slate-50 border border-slate-200 text-xs sm:text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:border-emerald-600 font-medium leading-relaxed"
               />
             </div>
           </div>
@@ -242,8 +253,8 @@ export const ProjectEstimator: React.FC<ProjectEstimatorProps> = ({ lang }) => {
                 <div className="text-[10px] font-mono uppercase tracking-[0.2em] text-slate-500 font-semibold">
                   {lang === 'fr' ? 'RÉCAPITULATIF DU PROJET' : 'PROJECT SUMMARY'}
                 </div>
-                <div className="flex items-center gap-1.5 text-xs text-blue-700 font-mono font-bold">
-                  <Clock className="w-3.5 h-3.5" />
+                <div className="flex items-center gap-1.5 text-xs text-emerald-800 font-mono font-bold">
+                  <Clock className="w-3.5 h-3.5 text-amber-600" />
                   <span>Délai indicatif</span>
                 </div>
               </div>
@@ -253,10 +264,10 @@ export const ProjectEstimator: React.FC<ProjectEstimatorProps> = ({ lang }) => {
                 <div className="text-xs text-slate-600 font-light">
                   {lang === 'fr' ? 'Temps estimé de réalisation' : 'Estimated Time to Delivery'}
                 </div>
-                <div className="text-3xl sm:text-4xl font-serif font-bold text-blue-700">
+                <div className="text-3xl sm:text-4xl font-serif font-bold text-emerald-800">
                   ~ {calculation.weeks} {lang === 'fr' ? 'semaines' : 'weeks'}
                 </div>
-                <div className="text-[10px] text-slate-400 uppercase tracking-wider font-medium">
+                <div className="text-[10px] text-slate-500 uppercase tracking-wider font-semibold">
                   {lang === 'fr' ? 'Cycle agile avec livraisons continues' : 'Agile sprints with continuous staging delivery'}
                 </div>
               </div>
@@ -267,13 +278,13 @@ export const ProjectEstimator: React.FC<ProjectEstimatorProps> = ({ lang }) => {
                   <span>{lang === 'fr' ? 'Brief prêt à l\'envoi' : 'Generated Project Brief'}</span>
                   <button
                     onClick={handleCopyBrief}
-                    className="flex items-center gap-1 text-blue-600 hover:text-blue-800 font-mono text-[11px] font-bold"
+                    className="flex items-center gap-1 text-emerald-800 hover:text-emerald-950 font-mono text-[11px] font-bold"
                   >
                     {copiedBrief ? <Check className="w-3 h-3 text-emerald-600" /> : <Copy className="w-3 h-3" />}
                     <span>{copiedBrief ? 'Copié !' : 'Copier'}</span>
                   </button>
                 </div>
-                <pre className="p-3.5 rounded-xl bg-slate-50 border border-slate-200 text-[11px] font-mono text-slate-700 whitespace-pre-wrap max-h-48 overflow-y-auto leading-relaxed">
+                <pre className="p-3.5 rounded-xl bg-slate-50 border border-slate-200 text-[11px] font-mono text-slate-800 whitespace-pre-wrap max-h-48 overflow-y-auto leading-relaxed">
                   {generatedBrief}
                 </pre>
               </div>
@@ -283,9 +294,9 @@ export const ProjectEstimator: React.FC<ProjectEstimatorProps> = ({ lang }) => {
                 <button
                   id="estimator-send-email-btn"
                   onClick={handleSendEmail}
-                  className="w-full flex items-center justify-center gap-2 px-5 py-3 rounded-full font-bold text-white bg-blue-600 hover:bg-blue-700 shadow-md transition-all text-xs uppercase tracking-wider"
+                  className="w-full flex items-center justify-center gap-2 px-5 py-3.5 rounded-full font-bold text-white bg-emerald-800 hover:bg-emerald-700 shadow-md transition-all text-xs uppercase tracking-wider"
                 >
-                  <Send className="w-4 h-4" />
+                  <Send className="w-4 h-4 text-amber-300" />
                   <span>{lang === 'fr' ? 'Transmettre ce brief par Email' : 'Send Brief via Email'}</span>
                 </button>
 
@@ -293,9 +304,9 @@ export const ProjectEstimator: React.FC<ProjectEstimatorProps> = ({ lang }) => {
                   href={`https://wa.me/22890000000?text=${encodeURIComponent(generatedBrief)}`}
                   target="_blank"
                   rel="noreferrer"
-                  className="w-full flex items-center justify-center gap-2 px-5 py-3 rounded-full font-bold text-slate-800 bg-slate-100 hover:bg-slate-200 border border-slate-200 transition-colors text-xs uppercase tracking-wider"
+                  className="w-full flex items-center justify-center gap-2 px-5 py-3.5 rounded-full font-bold text-slate-800 bg-slate-100 hover:bg-emerald-50 hover:text-emerald-950 border border-slate-200 transition-colors text-xs uppercase tracking-wider"
                 >
-                  <MessageSquare className="w-4 h-4 text-emerald-600" />
+                  <MessageSquare className="w-4 h-4 text-emerald-700" />
                   <span>{lang === 'fr' ? 'Échanger directement sur WhatsApp' : 'Discuss on WhatsApp'}</span>
                 </a>
               </div>

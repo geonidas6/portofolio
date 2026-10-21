@@ -9,7 +9,10 @@ import {
   Sparkles, 
   Award,
   Globe2,
-  CheckCircle2
+  CheckCircle2,
+  Smartphone,
+  ShoppingBag,
+  Package
 } from 'lucide-react';
 import { PERSONAL_INFO } from '../data/portfolioData';
 import { Language } from '../types';
@@ -23,56 +26,56 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ lang }) => {
   const pillars = [
     {
       icon: Code,
-      title: lang === 'fr' ? 'Clean Architecture & Code Maintenable' : 'Clean Architecture & Maintainable Code',
+      title: lang === 'fr' ? 'Gestion de Projets de A à Z' : 'End-to-End Project Delivery',
       description: lang === 'fr' 
-        ? 'Application stricte des principes SOLID, découplage des couches métiers, tests automatisés et modularité pérenne.'
-        : 'Strict adherence to SOLID principles, business logic decoupling, automated tests, and sustainable modularity.',
-      badge: 'Architecture'
+        ? 'De l\'analyse des besoins clients à la mise en production : cadrage, architecture front/back, tests et déploiement continu.'
+        : 'From requirements gathering to production launch: scoping, front/back architecture, QA testing, and continuous deployment.',
+      badge: 'Projet Complet'
     },
     {
-      icon: ShieldCheck,
-      title: lang === 'fr' ? 'Sécurité FinTech & Webhooks Robustes' : 'FinTech Security & Robust Webhooks',
+      icon: Smartphone,
+      title: lang === 'fr' ? 'Applications Mobiles & App Store' : 'Mobile Apps & App Store Publishing',
       description: lang === 'fr'
-        ? 'Expertise pointue dans les flux de paiement (MoneyFusion, Mobile Money, Stripe), signature HMAC et idempotence.'
-        : 'Deep expertise in payment flows (MoneyFusion, Mobile Money, Stripe), HMAC cryptographic validation, and idempotency.',
-      badge: 'FinTech & Security'
+        ? 'Conception d\'applications mobiles iOS publiées sur l\'App Store (ex: PetitNid) avec achats in-app / StoreKit, et Flutter cross-platform.'
+        : 'Design of native iOS apps published on the App Store (e.g. PetitNid) with In-App Purchases / StoreKit, and Flutter cross-platform.',
+      badge: 'iOS & Flutter'
     },
     {
-      icon: Zap,
-      title: lang === 'fr' ? 'Performance & Scalabilité' : 'Performance & Scalability',
+      icon: Package,
+      title: lang === 'fr' ? 'Packages Open-Source & Paiements' : 'Open-Source Packages & Payments',
       description: lang === 'fr'
-        ? 'Optimisation des temps de réponse (<100ms), mise en cache Redis, requêtes SQL indexées et Server-Side Rendering (Next.js).'
-        : 'Sub-100ms response optimization, Redis multi-tier caching, indexed SQL schemas, and SSR (Next.js).',
-      badge: 'High Speed'
+        ? 'Auteur du package officiel moneyfusion-laravel (1.2k+ dl). Expertise en validation cryptographique de webhooks et paiements sécurisés.'
+        : 'Author of the official moneyfusion-laravel package (1.2k+ dl). Deep expertise in HMAC signatures and payment integrations.',
+      badge: 'Package Author'
     },
     {
-      icon: GitPullRequest,
-      title: lang === 'fr' ? 'Culture Open Source & DevOps' : 'Open Source Culture & DevOps',
+      icon: ShoppingBag,
+      title: lang === 'fr' ? 'E-Commerce & CMS Spécialisé' : 'E-Commerce & Specialized CMS',
       description: lang === 'fr'
-        ? 'Auteur de packages communautaires, automatisation CI/CD avec GitHub Actions et conteneurisation Docker standardisée.'
-        : 'Package author, CI/CD automation with GitHub Actions, and standardized Docker container workflows.',
-      badge: 'DevOps'
+        ? 'Boutiques WordPress/WooCommerce sur-mesure et interventions d\'urgence / optimisation sur PrestaShop à fort trafic (Alepia, Aux Bonnes Senteurs).'
+        : 'Bespoke WooCommerce stores and rapid troubleshooting/optimization for high-traffic PrestaShop deployments.',
+      badge: 'WooCommerce & PrestaShop'
     }
   ];
 
   return (
-    <section id="about" className="py-24 bg-slate-50/60 border-t border-slate-200/80 relative">
+    <section id="about" className="py-24 bg-slate-50/70 border-t border-slate-200/80 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Heading */}
         <div className="text-center max-w-3xl mx-auto space-y-3 mb-16">
-          <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-200 text-blue-700 text-xs font-mono tracking-[0.25em] uppercase font-bold">
-            <Sparkles className="w-3.5 h-3.5" />
-            <span>{lang === 'fr' ? 'À PROPOS DE MOI' : 'ABOUT ME'}</span>
+          <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs font-mono tracking-[0.25em] uppercase font-bold">
+            <Sparkles className="w-3.5 h-3.5 text-amber-600" />
+            <span>{lang === 'fr' ? 'À PROPOS DE PATRICE ATCU' : 'ABOUT PATRICE ATCU'}</span>
           </div>
           <h2 className="text-3xl sm:text-5xl font-serif text-slate-950 tracking-tight">
             {lang === 'fr' 
-              ? 'Concepteur d\'expériences digitales performantes & sécurisées' 
-              : 'Architect of high-performance and secure digital experiences'}
+              ? 'Développeur Full Stack & Créateur de Solutions Web / Mobile' 
+              : 'Full Stack Developer & Web / Mobile Solutions Creator'}
           </h2>
           <p className="text-slate-700 text-base sm:text-lg leading-relaxed font-normal">
             {lang === 'fr'
-              ? 'Découvrez mon parcours, mes convictions techniques et la valeur que j\'apporte à vos projets web et mobiles.'
-              : 'Discover my engineering background, technical values, and how I drive high-impact software solutions.'}
+              ? 'Découvrez mon profil professionnel, mon parcours académique et la rigueur technique apportée à chaque projet.'
+              : 'Discover my professional background, academic credentials, and the technical discipline behind each delivery.'}
           </p>
         </div>
 
@@ -80,10 +83,15 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ lang }) => {
           {/* Bio Story (Left 6 cols) */}
           <div className="lg:col-span-6 space-y-6">
             <div className="p-6 sm:p-8 rounded-2xl bg-white border border-slate-200/90 space-y-5 shadow-xl">
-              <h3 className="text-xl sm:text-2xl font-serif font-bold text-slate-900 flex items-center gap-2.5">
-                <Globe2 className="w-6 h-6 text-blue-600" />
-                <span>{lang === 'fr' ? 'Mon Parcours & Philosophie' : 'My Background & Philosophy'}</span>
-              </h3>
+              <div className="flex items-center justify-between border-b border-slate-100 pb-4">
+                <h3 className="text-xl sm:text-2xl font-serif font-bold text-slate-900 flex items-center gap-2.5">
+                  <Globe2 className="w-6 h-6 text-emerald-700" />
+                  <span>{lang === 'fr' ? 'Profil Professionnel' : 'Professional Profile'}</span>
+                </h3>
+                <span className="text-xs font-mono font-bold px-3 py-1 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200">
+                  Lomé, Togo 🇹🇬
+                </span>
+              </div>
               
               <div className="space-y-4 text-slate-700 text-base sm:text-lg leading-relaxed font-normal">
                 {PERSONAL_INFO.bio[lang].split('\n\n').map((para, index) => (
@@ -91,15 +99,18 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ lang }) => {
                 ))}
               </div>
 
-              <div className="pt-4 border-t border-slate-100 flex flex-wrap gap-2.5 text-xs sm:text-sm font-mono">
-                <span className="px-3.5 py-1.5 rounded-full bg-slate-100 border border-slate-200 text-slate-800 font-semibold">
-                  📍 {PERSONAL_INFO.location}
+              <div className="pt-4 border-t border-slate-100 flex flex-wrap gap-2 text-xs sm:text-sm font-mono">
+                <span className="px-3 py-1 rounded-full bg-slate-100 border border-slate-200 text-slate-800 font-semibold">
+                  🎓 BCA — CIFOP (2015-2017)
                 </span>
-                <span className="px-3.5 py-1.5 rounded-full bg-blue-50 text-blue-800 border border-blue-200 font-semibold">
-                  ⚡ Full-Stack Web & Mobile
+                <span className="px-3 py-1 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200 font-semibold">
+                  📱 iOS App Store (PetitNid)
                 </span>
-                <span className="px-3.5 py-1.5 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200 font-semibold">
-                  🛡️ FinTech Specialist
+                <span className="px-3 py-1 rounded-full bg-amber-50 text-amber-900 border border-amber-200 font-semibold">
+                  📦 moneyfusion-laravel
+                </span>
+                <span className="px-3 py-1 rounded-full bg-slate-100 text-slate-800 border border-slate-200 font-semibold">
+                  🌐 IT Sefako (it-sefako.com)
                 </span>
               </div>
             </div>
@@ -107,58 +118,60 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ lang }) => {
             {/* Quick Metrics Banner */}
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-3.5">
               <div className="p-4 rounded-xl bg-white border border-slate-200 text-center shadow-sm">
-                <div className="text-3xl font-serif font-bold text-blue-600">5+</div>
-                <div className="text-xs uppercase tracking-wider text-slate-600 font-semibold mt-1">{lang === 'fr' ? 'Années Exp.' : 'Years Exp.'}</div>
+                <div className="text-3xl font-serif font-bold text-emerald-800">100%</div>
+                <div className="text-xs uppercase tracking-wider text-slate-600 font-semibold mt-1">Satisfaction Codeur</div>
               </div>
               <div className="p-4 rounded-xl bg-white border border-slate-200 text-center shadow-sm">
-                <div className="text-3xl font-serif font-bold text-slate-900">35+</div>
-                <div className="text-xs uppercase tracking-wider text-slate-600 font-semibold mt-1">{lang === 'fr' ? 'Projets Conçus' : 'Projects Done'}</div>
+                <div className="text-3xl font-serif font-bold text-slate-900">13+</div>
+                <div className="text-xs uppercase tracking-wider text-slate-600 font-semibold mt-1">Réalisations Clés</div>
               </div>
               <div className="p-4 rounded-xl bg-white border border-slate-200 text-center shadow-sm">
-                <div className="text-3xl font-serif font-bold text-emerald-600">1.2k+</div>
-                <div className="text-xs uppercase tracking-wider text-slate-600 font-semibold mt-1">{lang === 'fr' ? 'Downloads Pkg' : 'Pkg Downloads'}</div>
+                <div className="text-3xl font-serif font-bold text-amber-600">1.2k+</div>
+                <div className="text-xs uppercase tracking-wider text-slate-600 font-semibold mt-1">Downloads Pkg</div>
               </div>
               <div className="p-4 rounded-xl bg-white border border-slate-200 text-center shadow-sm">
-                <div className="text-3xl font-serif font-bold text-slate-900">100%</div>
-                <div className="text-xs uppercase tracking-wider text-slate-600 font-semibold mt-1">{lang === 'fr' ? 'Satisfaction' : 'Satisfaction'}</div>
+                <div className="text-3xl font-serif font-bold text-emerald-800">BCA</div>
+                <div className="text-xs uppercase tracking-wider text-slate-600 font-semibold mt-1">CIFOP 2017</div>
               </div>
             </div>
           </div>
 
-          {/* Core Pillars (Right 6 cols) */}
-          <div className="lg:col-span-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
-            {pillars.map((pillar, idx) => {
-              const IconComp = pillar.icon;
+          {/* Pillars & Codeur Widget (Right 6 cols) */}
+          <div className="lg:col-span-6 space-y-4">
+            {pillars.map((item, idx) => {
+              const Icon = item.icon;
               return (
                 <div
                   key={idx}
-                  className="p-6 rounded-2xl bg-white border border-slate-200/90 hover:border-blue-400 transition-all hover:shadow-md group space-y-3.5 shadow-sm"
+                  className="p-5 rounded-2xl bg-white border border-slate-200/90 shadow-md hover:shadow-lg hover:border-emerald-300 transition-all group"
                 >
-                  <div className="flex items-center justify-between">
-                    <div className="p-3 rounded-xl bg-slate-100 text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-colors border border-slate-200">
-                      <IconComp className="w-5 h-5" />
+                  <div className="flex items-start gap-4">
+                    <div className="p-3 rounded-xl bg-emerald-50 text-emerald-800 group-hover:bg-emerald-800 group-hover:text-amber-300 transition-colors border border-emerald-200 shrink-0">
+                      <Icon className="w-5 h-5" />
                     </div>
-                    <span className="text-xs font-mono uppercase tracking-[0.2em] text-slate-600 px-3 py-1 rounded-full bg-slate-50 border border-slate-200 font-bold">
-                      {pillar.badge}
-                    </span>
+                    <div className="space-y-1.5 flex-1">
+                      <div className="flex items-center justify-between gap-2">
+                        <h4 className="font-serif font-bold text-slate-900 text-base sm:text-lg">
+                          {item.title}
+                        </h4>
+                        <span className="text-[10px] uppercase font-mono px-2 py-0.5 rounded-full bg-slate-100 text-slate-700 font-semibold shrink-0">
+                          {item.badge}
+                        </span>
+                      </div>
+                      <p className="text-slate-600 text-sm leading-relaxed font-normal">
+                        {item.description}
+                      </p>
+                    </div>
                   </div>
-
-                  <h4 className="text-base sm:text-lg font-bold text-slate-900 group-hover:text-blue-600 transition-colors">
-                    {pillar.title}
-                  </h4>
-
-                  <p className="text-sm sm:text-base text-slate-600 leading-relaxed font-normal">
-                    {pillar.description}
-                  </p>
                 </div>
               );
             })}
           </div>
+        </div>
 
-          {/* Integrated Codeur.com Profile Verification Widget - Full Width (12 cols) */}
-          <div className="lg:col-span-12 w-full pt-2">
-            <CodeurWidget lang={lang} />
-          </div>
+        {/* Codeur.com Official Verification Widget (Full Width) */}
+        <div className="mt-14">
+          <CodeurWidget lang={lang} />
         </div>
       </div>
     </section>
