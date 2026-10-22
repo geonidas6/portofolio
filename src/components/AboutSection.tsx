@@ -34,11 +34,11 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ lang }) => {
     },
     {
       icon: Smartphone,
-      title: lang === 'fr' ? 'Applications Mobiles & App Store' : 'Mobile Apps & App Store Publishing',
+      title: lang === 'fr' ? 'Applications Mobiles & Stores' : 'Mobile Apps & Stores Publishing',
       description: lang === 'fr'
-        ? 'Conception d\'applications mobiles iOS publiées sur l\'App Store (ex: PetitNid) avec achats in-app / StoreKit, et Flutter cross-platform.'
-        : 'Design of native iOS apps published on the App Store (e.g. PetitNid) with In-App Purchases / StoreKit, and Flutter cross-platform.',
-      badge: 'iOS & Flutter'
+        ? 'Conception et publication d\'applications mobiles sur l\'App Store et Google Play (ex: PetitNid) avec achats in-app sécurisés et architecture Flutter / iOS.'
+        : 'Design and publishing of mobile apps on the Apple App Store and Google Play (e.g. PetitNid) with secure In-App Purchases and Flutter / iOS architecture.',
+      badge: 'App Store & Google Play'
     },
     {
       icon: Package,
@@ -104,7 +104,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ lang }) => {
                   🎓 BCA — CIFOP (2015-2017)
                 </span>
                 <span className="px-3 py-1 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200 font-semibold">
-                  📱 iOS App Store (PetitNid)
+                  📱 App Store & Google Play (PetitNid)
                 </span>
                 <span className="px-3 py-1 rounded-full bg-amber-50 text-amber-900 border border-amber-200 font-semibold">
                   📦 moneyfusion-laravel

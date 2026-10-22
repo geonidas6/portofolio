@@ -29,12 +29,12 @@ export const PERSONAL_INFO = {
   bio: {
     fr: `Développeur passionné et polyvalent avec une solide expérience dans la conception et le déploiement de solutions web, d'applications mobiles, de packages backend et de plateformes e-commerce.
 
-Capable de gérer un projet de A à Z : de l'analyse des besoins client à la mise en production, en passant par le développement front-end/back-end, la création d'outils/packages open-source, l'intégration de systèmes de paiement et la publication d'applications sur les stores (App Store).
+Capable de gérer un projet de A à Z : de l'analyse des besoins client à la mise en production, en passant par le développement front-end/back-end, la création d'outils/packages open-source, l'intégration de systèmes de paiement et la publication d'applications sur les stores (App Store & Google Play).
 
 Auteur du package Laravel open-source MoneyFusion (@geonidas6/moneyfusion-laravel) et fondateur de la vitrine technologique IT Sefako.`,
     en: `Passionate and versatile developer with extensive experience designing and deploying web solutions, mobile apps, backend packages, and e-commerce platforms.
 
-Capable of managing projects from A to Z: from client requirements analysis to production release, encompassing front-end/back-end engineering, open-source tool/package creation, payment gateway integration, and app store deployment (App Store).
+Capable of managing projects from A to Z: from client requirements analysis to production release, encompassing front-end/back-end engineering, open-source tool/package creation, payment gateway integration, and app store deployment (App Store & Google Play).
 
 Author of the open-source MoneyFusion Laravel package (@geonidas6/moneyfusion-laravel) and founder of the IT Sefako technology hub.`
   }
@@ -107,31 +107,32 @@ export const PROJECTS_DATA: Project[] = [
   },
   {
     id: 'petitnid-app',
-    title: 'PetitNid App — Gestion de Garde Alternée (iOS App Store)',
-    subtitle: 'Application mobile iOS publiée sur l\'App Store pour parents séparés',
-    description: 'Conception et développement complet d\'une application mobile publiée sur l\'App Store destinée aux parents séparés/divorcés. Intégration d\'outils d\'organisation, de communication et de modules d\'achats in-app / paiements sécurisés.',
-    fullDescription: 'Application mobile native iOS développée avec soin pour simplifier le quotidien des familles en garde alternée : plannings partagés, journal de dépenses, messagerie interne et abonnements premium via In-App Purchases.',
+    title: 'PetitNid App — Gestion de Garde Alternée (App Store & Google Play)',
+    subtitle: 'Application mobile iOS & Android publiée sur l\'App Store et Google Play Store',
+    description: 'Conception et développement complet d\'une application mobile publiée sur l\'App Store et Google Play destinée aux parents séparés/divorcés. Intégration d\'outils d\'organisation, de communication et de modules d\'achats in-app / paiements sécurisés.',
+    fullDescription: 'Application mobile développée avec soin pour simplifier le quotidien des familles en garde alternée : plannings partagés, journal de dépenses, messagerie interne et abonnements premium via In-App Purchases. Disponible officiellement sur iOS (Apple App Store) et Android (Google Play Store).',
     category: 'mobile',
-    tags: ['iOS', 'Swift', 'App Store', 'In-App Purchases', 'Paiements Sécurisés', 'Mobile'],
+    tags: ['iOS', 'Android', 'Swift', 'App Store', 'Google Play', 'In-App Purchases', 'Mobile'],
     featured: true,
-    liveUrl: 'https://apps.apple.com',
-    appStoreUrl: 'https://apps.apple.com',
-    role: 'Concepteur & Développeur iOS',
+    liveUrl: 'https://apps.apple.com/us/app/petitnid-app/id6762980886',
+    appStoreUrl: 'https://apps.apple.com/us/app/petitnid-app/id6762980886',
+    playStoreUrl: 'https://play.google.com/store/apps/details?id=com.petitnid.petitnid',
+    role: 'Concepteur & Développeur Mobile (iOS & Android)',
     year: '2023 - 2024',
     highlights: [
-      'Publication officielle et validation sur l\'App Store Apple',
+      'Publication officielle et validation sur l\'Apple App Store et Google Play Store',
       'Outils de synchronisation de calendrier et plannings de garde alternée',
       'Gestion financière partagée des dépenses de santé, scolarité et loisirs des enfants',
-      'Intégration des achats in-app (In-App Purchases / StoreKit) et abonnements sécurisés'
+      'Intégration des achats in-app (In-App Purchases / StoreKit / Google Play Billing) et abonnements sécurisés'
     ],
     architecture: [
-      'Architecture iOS native moderne avec Swift et patterns réactifs',
-      'Intégration StoreKit pour les abonnements récurrents et achats intégrés',
+      'Architecture mobile performante et réactive avec gestion fine des états',
+      'Intégration StoreKit et Google Play Billing pour abonnements et paiements in-app sécurisés',
       'Chiffrement de bout en bout des communications familiales et des données personnelles'
     ],
     metrics: [
-      { label: 'Store', value: 'Apple App Store' },
-      { label: 'Plateforme', value: 'iOS (Swift)' },
+      { label: 'Stores', value: 'App Store & Play' },
+      { label: 'Plateformes', value: 'iOS & Android' },
       { label: 'Paiements', value: 'In-App Purchases' }
     ],
     imagePlaceholderGradient: 'from-blue-600 via-indigo-600 to-purple-700',
@@ -584,14 +585,14 @@ export const SKILLS_CATEGORIES: SkillCategory[] = [
     icon: 'Smartphone',
     skills: [
       {
-        name: 'iOS (Swift & Publication App Store)',
-        level: 92,
-        experience: 'Sur l\'App Store',
+        name: 'iOS & Android (App Store & Google Play)',
+        level: 94,
+        experience: 'Stores Officiels',
         description: {
-          fr: 'Conception d\'applications natives iOS publiées sur l\'App Store (ex: PetitNid), intégration d\'achats in-app (In-App Purchases) et notifications push.',
-          en: 'Building native iOS apps published on the App Store (e.g. PetitNid), In-App Purchases integration, and push notifications.'
+          fr: 'Conception et publication d\'applications mobiles sur l\'App Store Apple et Google Play Store (ex: PetitNid), intégration d\'achats in-app (StoreKit / Google Billing) et notifications push.',
+          en: 'Building and publishing mobile apps on the Apple App Store and Google Play Store (e.g. PetitNid), In-App Purchases (StoreKit / Google Billing), and push notifications.'
         },
-        popularUse: 'Swift, StoreKit (In-App Purchases), App Store Validation',
+        popularUse: 'Swift, Flutter, StoreKit, Google Play Billing, App Store & Google Play Publishing',
         highlight: true
       },
       {
@@ -712,7 +713,7 @@ export const EXPERIENCE_DATA: ExperienceItem[] = [
       fr: [
         'Analyse des besoins des clients et rédaction détaillée des cahiers des charges fonctionnels et techniques.',
         'Développement sur-mesure de sites vitrines et boutiques e-commerce haute conversion (WordPress, WooCommerce, PrestaShop : Alepia, Aux Bonnes Senteurs, JMO Transport, Transinbel).',
-        'Conception d\'applications web et mobiles de pointe (Laravel, iOS Swift, Flutter : ZenAds, Miva, PetitNid sur l\'App Store, Iramis Delivery).',
+        'Conception d\'applications web et mobiles de pointe (Laravel, iOS Swift, Flutter : ZenAds, Miva, PetitNid sur l\'App Store & Google Play, Iramis Delivery).',
         'Création et publication du package open-source geonidas6/moneyfusion-laravel facilitant l\'automatisation des paiements pour les développeurs.',
         'Résolution de bugs complexes, refonte d\'architectures logicielles existantes et optimisation drastique des performances web.',
         'Maintenance corrective et évolutive des projets livrés avec un taux de satisfaction client maximal (100% sur Codeur.com).'
@@ -720,7 +721,7 @@ export const EXPERIENCE_DATA: ExperienceItem[] = [
       en: [
         'Client needs analysis and writing of comprehensive technical & functional specifications.',
         'Custom development of showcase sites and high-conversion e-commerce stores (WordPress, WooCommerce, PrestaShop: Alepia, Aux Bonnes Senteurs, JMO Transport, Transinbel).',
-        'Engineering cutting-edge web & mobile applications (Laravel, iOS Swift, Flutter: ZenAds, Miva, PetitNid on the App Store, Iramis Delivery).',
+        'Engineering cutting-edge web & mobile applications (Laravel, iOS Swift, Flutter: ZenAds, Miva, PetitNid on the App Store & Google Play, Iramis Delivery).',
         'Creation and maintenance of the open-source geonidas6/moneyfusion-laravel package streamlining payments for PHP/Laravel teams.',
         'Troubleshooting complex system bugs, refactoring legacy codebases, and drastically optimizing load times.',
         'Corrective and continuous evolutionary maintenance with flawless 100% client satisfaction on Codeur.com.'

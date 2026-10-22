@@ -13,6 +13,7 @@ export interface Project {
   liveUrl?: string;
   packageUrl?: string;
   appStoreUrl?: string;
+  playStoreUrl?: string;
   stars?: number;
   role: string;
   year: string;

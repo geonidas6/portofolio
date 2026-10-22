@@ -170,10 +170,22 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose, la
                 href={project.appStoreUrl}
                 target="_blank"
                 rel="noreferrer"
-                className="flex-1 sm:flex-initial inline-flex items-center justify-center gap-1.5 px-4 py-2.5 rounded-full text-xs font-mono font-bold bg-blue-600 hover:bg-blue-700 text-white transition-colors shadow-sm"
+                className="flex-1 sm:flex-initial inline-flex items-center justify-center gap-1.5 px-4 py-2.5 rounded-full text-xs font-mono font-bold bg-slate-900 hover:bg-slate-800 text-white transition-colors shadow-sm border border-slate-700"
               >
-                <Smartphone className="w-4 h-4" />
-                <span>App Store</span>
+                <Smartphone className="w-4 h-4 text-sky-400" />
+                <span>App Store (iOS)</span>
+              </a>
+            )}
+
+            {project.playStoreUrl && (
+              <a
+                href={project.playStoreUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="flex-1 sm:flex-initial inline-flex items-center justify-center gap-1.5 px-4 py-2.5 rounded-full text-xs font-mono font-bold bg-emerald-800 hover:bg-emerald-700 text-white transition-colors shadow-sm"
+              >
+                <Smartphone className="w-4 h-4 text-emerald-300" />
+                <span>Google Play (Android)</span>
               </a>
             )}
 
@@ -189,7 +201,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose, la
               </a>
             )}
 
-            {project.liveUrl && (
+            {project.liveUrl && project.liveUrl !== project.appStoreUrl && project.liveUrl !== project.playStoreUrl && (
               <a
                 href={project.liveUrl}
                 target="_blank"

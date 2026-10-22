@@ -127,7 +127,7 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose, lang 
                 PROFIL PROFESSIONNEL
               </h2>
               <p className="text-sm sm:text-base text-slate-800 leading-relaxed font-normal">
-                Développeur passionné et polyvalent avec une solide expérience dans la conception et le déploiement de solutions web, d'applications mobiles, de packages backend et de plateformes e-commerce. Capable de gérer un projet de A à Z : de l'analyse des besoins client à la mise en production, en passant par le développement front-end/back-end, la création d'outils/packages open-source, l'intégration de systèmes de paiement et la publication d'applications sur les stores (App Store).
+                Développeur passionné et polyvalent avec une solide expérience dans la conception et le déploiement de solutions web, d'applications mobiles, de packages backend et de plateformes e-commerce. Capable de gérer un projet de A à Z : de l'analyse des besoins client à la mise en production, en passant par le développement front-end/back-end, la création d'outils/packages open-source, l'intégration de systèmes de paiement et la publication d'applications sur les stores (App Store & Google Play).
               </p>
             </div>
           </div>
@@ -157,7 +157,7 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose, lang 
               <div className="p-3.5 rounded-xl bg-slate-50 border border-slate-200">
                 <strong className="text-emerald-900 block font-bold mb-1 text-sm">Développement Mobile & Cross-Platform :</strong>
                 <span className="text-slate-700 leading-relaxed font-normal">
-                  Flutter, Ionic, iOS (Swift / App Store).
+                  Flutter, Ionic, iOS (Swift / App Store), Android (Google Play).
                 </span>
               </div>
 
@@ -218,14 +218,33 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose, lang 
                 </div>
 
                 <div className="p-3.5 rounded-xl bg-slate-50 border border-slate-200 text-sm space-y-1">
-                  <div className="flex flex-wrap justify-between items-center gap-1">
-                    <span className="font-bold text-slate-950">PetitNid App — Application iOS de Gestion de Garde Alternée</span>
-                    <span className="text-xs font-mono font-bold text-blue-700 flex items-center gap-1">
-                      <span>Sur l'App Store Apple</span>
-                    </span>
+                  <div className="flex flex-wrap justify-between items-center gap-1.5">
+                    <span className="font-bold text-slate-950">PetitNid App — Application Mobile de Gestion de Garde Alternée</span>
+                    <div className="flex items-center gap-2">
+                      <a 
+                        href="https://apps.apple.com/us/app/petitnid-app/id6762980886" 
+                        target="_blank" 
+                        rel="noreferrer" 
+                        className="text-xs font-mono font-bold text-sky-800 hover:text-sky-950 flex items-center gap-1 hover:underline bg-sky-50 px-2.5 py-1 rounded-md border border-sky-200"
+                        title="Voir sur l'App Store Apple"
+                      >
+                        <span>App Store</span>
+                        <ExternalLink className="w-3 h-3" />
+                      </a>
+                      <a 
+                        href="https://play.google.com/store/apps/details?id=com.petitnid.petitnid" 
+                        target="_blank" 
+                        rel="noreferrer" 
+                        className="text-xs font-mono font-bold text-emerald-800 hover:text-emerald-950 flex items-center gap-1 hover:underline bg-emerald-50 px-2.5 py-1 rounded-md border border-emerald-200"
+                        title="Voir sur Google Play Store"
+                      >
+                        <span>Google Play</span>
+                        <ExternalLink className="w-3 h-3" />
+                      </a>
+                    </div>
                   </div>
                   <p className="text-slate-700 font-normal leading-relaxed text-xs sm:text-sm">
-                    Conception et développement complet d'une application mobile publiée sur l'App Store destinée aux parents séparés/divorcés. Intégration d'outils d'organisation, de communication et de modules d'achats in-app / paiements sécurisés.
+                    Conception et développement complet d'une application mobile publiée sur l'App Store et Google Play Store destinée aux parents séparés/divorcés. Intégration d'outils d'organisation, de communication et de modules d'achats in-app / paiements sécurisés.
                   </p>
                 </div>
 

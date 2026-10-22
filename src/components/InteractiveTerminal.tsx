@@ -103,7 +103,7 @@ export const InteractiveTerminal: React.FC<InteractiveTerminalProps> = ({ lang, 
               </div>
               <div>
                 <span className="text-amber-300 font-semibold block">Mobile & Cross-Platform :</span>
-                Flutter (Dart), Ionic, iOS (Swift / Publication App Store).
+                Flutter (Dart), Ionic, iOS & Android (Swift / App Store & Google Play).
               </div>
               <div>
                 <span className="text-amber-300 font-semibold block">E-Commerce & CMS :</span>
@@ -152,14 +152,33 @@ export const InteractiveTerminal: React.FC<InteractiveTerminalProps> = ({ lang, 
         break;
 
       case 'ios':
+      case 'android':
       case 'petitnid':
         response = (
-          <div className="space-y-1.5 py-1 text-xs bg-slate-900 p-3 rounded-lg border border-blue-900/60">
+          <div className="space-y-2 py-1 text-xs bg-slate-900 p-3.5 rounded-lg border border-blue-900/60">
             <p className="text-blue-400 font-bold">📱 PetitNid App — Gestion de Garde Alternée</p>
-            <p className="text-slate-300">
-              Application mobile native iOS développée avec Swift et publiée sur l'App Store Apple, destinée aux parents séparés/divorcés. Achats in-app / StoreKit.
+            <p className="text-slate-300 leading-relaxed">
+              Application mobile développée avec soin pour simplifier le quotidien des familles en garde alternée : plannings partagés, gestion financière et abonnements in-app sécurisés.
             </p>
-            <p className="text-slate-400 font-mono">Plateforme : iOS (Swift) • Store : Apple App Store</p>
+            <p className="text-slate-400 font-mono">Plateforme : iOS & Android • Stores : Apple App Store & Google Play</p>
+            <div className="flex flex-wrap gap-3 pt-1">
+              <a 
+                href="https://apps.apple.com/us/app/petitnid-app/id6762980886" 
+                target="_blank" 
+                rel="noreferrer" 
+                className="text-sky-300 underline font-mono flex items-center gap-1"
+              >
+                App Store (iOS) ↗
+              </a>
+              <a 
+                href="https://play.google.com/store/apps/details?id=com.petitnid.petitnid" 
+                target="_blank" 
+                rel="noreferrer" 
+                className="text-emerald-400 underline font-mono flex items-center gap-1"
+              >
+                Google Play (Android) ↗
+              </a>
+            </div>
           </div>
         );
         break;

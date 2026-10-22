@@ -186,7 +186,29 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ lang }) => {
                     </button>
 
                     <div className="flex items-center gap-1.5">
-                      {project.liveUrl && (
+                      {project.appStoreUrl && (
+                        <a
+                          href={project.appStoreUrl}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="p-1.5 rounded-lg bg-slate-900 hover:bg-slate-800 text-white transition-colors border border-slate-700 shadow-sm"
+                          title="Télécharger sur l'Apple App Store"
+                        >
+                          <Smartphone className="w-3.5 h-3.5 text-sky-300" />
+                        </a>
+                      )}
+                      {project.playStoreUrl && (
+                        <a
+                          href={project.playStoreUrl}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="p-1.5 rounded-lg bg-emerald-800 hover:bg-emerald-700 text-white transition-colors border border-emerald-600 shadow-sm"
+                          title="Télécharger sur Google Play Store"
+                        >
+                          <Smartphone className="w-3.5 h-3.5 text-emerald-300" />
+                        </a>
+                      )}
+                      {project.liveUrl && project.liveUrl !== project.appStoreUrl && project.liveUrl !== project.playStoreUrl && (
                         <a
                           href={project.liveUrl}
                           target="_blank"
